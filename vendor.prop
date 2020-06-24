@@ -75,6 +75,7 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
 ro.hardware.wlan.dbs=0
+ro.incremental.enable=1
 ro.lmk.kill_heaviest_task=true
 ro.lmk.kill_timeout_ms=15
 ro.opengles.version=196610
