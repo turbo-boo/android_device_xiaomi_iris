@@ -32,6 +32,7 @@ persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
 persist.bluetooth.a2dp_offload.disabled=false
 persist.radio.multisim.config=ssss
 persist.sys.force_sw_gles=1
+persist.sys.fuse.passthrough.enable=true
 persist.sys.mcd_config_file=/system/etc/mcd_default.conf
 persist.sys.sf.color_mode=0
 persist.sys.sf.color_saturation=1.0
