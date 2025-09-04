@@ -243,6 +243,13 @@ PRODUCT_PACKAGES += \
 
 $(call soong_config_set_bool,lineage_health,charging_control_supports_bypass,false)
 
+# LiveDisplay
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay-service.sdm
+
+# The QDCM modes are MIUI-internal and would clash with the framework color modes
+$(call soong_config_set_bool,livedisplay_sdm,enable_dm,false)
+
 # Media
 $(call soong_config_set_bool,stagefright,target_disable_thumbnail_block_model,true)
 
