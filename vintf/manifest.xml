@@ -8,7 +8,7 @@
      Source HALs with their own vintf_fragments (display, health, power,
      sensors, thermal, usb, vibrator, wifi, boot, ir, ...) must not be listed here.
 -->
-<manifest version="2.0" type="device" target-level="5">
+<manifest version="2.0" type="device" target-level="7">
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>
