@@ -4,14 +4,6 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
-    <!-- Defines the actions shown in advanced reboot submenu. -->
-    <string-array name="config_restartActionsList">
-        <item>restart</item>
-        <item>restart_recovery</item>
-        <item>restart_bootloader</item>
-        <item>restart_fastboot</item>
-    </string-array>
-
     <!-- Only the power and volume keys exist (no capacitive home/back/menu keys), so the
          key handler mask stays at volume only. -->
     <integer name="config_deviceHardwareKeys">64</integer>
