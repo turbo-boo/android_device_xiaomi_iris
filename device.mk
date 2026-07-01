@@ -213,6 +213,9 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc \
     vendor_modprobe.sh
 
+# ION
+$(call soong_config_set_bool,libion,legacy_impl,true)
+
 # IPACM
 PRODUCT_PACKAGES += \
     ipacm \
