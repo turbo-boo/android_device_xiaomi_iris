@@ -92,7 +92,6 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 # required by the hardware/qcom-caf HALs.
 TARGET_FORCE_PREBUILT_KERNEL := true
 TARGET_KERNEL_CONFIG := vendor/holi-qgki_defconfig
-TARGET_KERNEL_NO_GCC := true
 TARGET_KERNEL_SOURCE := kernel/oneplus/sm4350
 TARGET_PREBUILT_KERNEL := $(KERNEL_PATH)/kernel
 
