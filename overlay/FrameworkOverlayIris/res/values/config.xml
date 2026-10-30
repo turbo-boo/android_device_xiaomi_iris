@@ -133,6 +133,10 @@
     <!-- Power management -->
     <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
 
+    <!-- Double tap to wake: the power HAL forwards Mode::DOUBLE_TAP_TO_WAKE to the
+         xiaomi_touch mode ioctl (power/PowerModeExtension.cpp). -->
+    <bool name="config_supportDoubleTapWake">true</bool>
+
     <!-- Doze. The stock component is MIUI's AOD service; use the AOSP/Lineage one. This is
          an LCD panel, so there is no always-on display. -->
     <string name="config_dozeComponent" translatable="false">com.android.systemui/com.android.systemui.doze.DozeService</string>

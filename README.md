@@ -58,3 +58,7 @@ consistency); it has not been built or booted yet. Items that need a device:
 - `power_profile.xml` and the powerhint frequency values are taken from the stock
   firmware and from `oneplus/dre` (same SoC); they are not measured on iris.
 - Recovery does not mount `/vendor/firmware_mnt`, as on stock.
+- Double tap to wake goes through the power HAL (`power/PowerModeExtension.cpp`)
+  to the xiaomi_touch mode ioctl on `/dev/xiaomi-touch`. The mode number (14) is
+  the common `xiaomi_touch.h` value; it has not been confirmed on either iris
+  touch panel (Novatek or FocalTech).
