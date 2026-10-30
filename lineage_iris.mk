@@ -24,8 +24,8 @@ PRODUCT_MODEL := XIG02
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="XIG02_jp_kdi-user 13 TKQ1.220905.001 V14.0.21.0.TKRJPKD release-keys" \
-    BuildFingerprint=Redmi/XIG02_jp_kdi/XIG02:13/TKQ1.220905.001/V14.0.21.0.TKRJPKD:user/release-keys \
+    BuildDesc="XIG02_jp_kdi-user 13 TKQ1.220905.001 V14.0.26.0.TKRJPKD release-keys" \
+    BuildFingerprint=Redmi/XIG02_jp_kdi/XIG02:13/TKQ1.220905.001/V14.0.26.0.TKRJPKD:user/release-keys \
     DeviceName=XIG02 \
     DeviceProduct=XIG02_jp_kdi \
     SystemDevice=XIG02 \

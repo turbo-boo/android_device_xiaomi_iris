@@ -1,5 +1,5 @@
 ## All proprietary files below, unless pinned otherwise, are from
-## XIG02 MIUI 14 V14.0.21.0.TKRJPKD (vendor partition: Android 11 / API 30).
+## XIG02 MIUI 14 V14.0.26.0.TKRJPKD (vendor partition: Android 11 / API 30).
 
 # ACDB
 vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
@@ -1070,7 +1070,6 @@ vendor/etc/perf/targetresourceconfigs.xml
 vendor/etc/powerhint.xml
 vendor/lib/libperfconfig.so
 vendor/lib/libperfgluelayer.so
-vendor/lib/vendor.qti.hardware.limits@1.0.so
 vendor/lib/vendor.qti.hardware.perf@2.0.so;MODULE_SUFFIX=_vendor
 vendor/lib/vendor.qti.hardware.perf@2.1.so;MODULE_SUFFIX=_vendor
 vendor/lib/vendor.qti.hardware.perf@2.2.so;MODULE_SUFFIX=_vendor

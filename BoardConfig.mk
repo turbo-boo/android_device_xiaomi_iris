@@ -85,7 +85,7 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
 # Xiaomi has not published the iris kernel source, so the stock MIUI
-# V14.0.21.0 kernel (5.4.233-perf) is shipped as a prebuilt. The kernel source
+# V14.0.26.0 kernel (5.4.259-perf) is shipped as a prebuilt. The kernel source
 # below is the same SoC (SM4350/holi, msm-5.4) and is only used to generate
 # the UAPI headers required by the hardware/qcom-caf HALs.
 TARGET_FORCE_PREBUILT_KERNEL := true
@@ -150,8 +150,8 @@ TARGET_USERIMAGES_USE_F2FS := true
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
 
-# Security patch level (must match the stock V14.0.21.0 vendor/boot for keymaster)
-BOOT_SECURITY_PATCH := 2023-12-01
+# Security patch level (must match the stock V14.0.26.0 vendor/boot for keymaster)
+BOOT_SECURITY_PATCH := 2024-08-01
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 # SEPolicy

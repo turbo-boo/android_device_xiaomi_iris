@@ -9,7 +9,7 @@ au (KDDI) Redmi Note 10 JE, `XIG02`, codename `iris`.
 | CPU                     | 2x 2.0 GHz Cortex-A76 + 6x 1.8 GHz Cortex-A55      |
 | GPU                     | Adreno 619                                         |
 | Memory                  | 4 GB                                               |
-| Shipped Android version | 11 (MIUI 12.5), last update MIUI 14 V14.0.21.0     |
+| Shipped Android version | 11 (MIUI 12.5), last update MIUI 14 V14.0.26.0     |
 | Storage                 | 64 GB                                              |
 | Display                 | 6.5" 1080 x 2400, 90 Hz                            |
 | Fingerprint             | Side-mounted (FPC)                                 |
@@ -17,20 +17,20 @@ au (KDDI) Redmi Note 10 JE, `XIG02`, codename `iris`.
 
 ## Requirements
 
-- Stock firmware **MIUI V14.0.21.0.TKRJPKD** must be installed before flashing.
+- Stock firmware **MIUI V14.0.26.0.TKRJPKD** must be installed before flashing.
   The vendor blobs, the prebuilt kernel and the kernel modules are all taken from
-  that release, and the security patch level is pinned to its 2023-12-01 so that
+  that release, and the security patch level is pinned to its 2024-08-01 so that
   keymaster keeps working.
 - Proprietary files are extracted from a dump of the same release:
 
   ```bash
-  ./extract-files.py /path/to/V14.0.21.0.TKRJPKD-dump
+  ./extract-files.py /path/to/V14.0.26.0.TKRJPKD-dump
   ```
 
 ## Kernel
 
 Xiaomi has not published the iris kernel source. The stock
-`5.4.233-perf` kernel, its DTBs, DTBO and the 40 vendor modules it loads are
+`5.4.259-perf` kernel, its DTBs, DTBO and the 40 vendor modules it loads are
 shipped from `prebuilts/`. `kernel/oneplus/sm4350` (same SoC, msm-5.4) is only
 used to generate the UAPI headers needed by the `hardware/qcom-caf` HALs; it
 is not compiled.
