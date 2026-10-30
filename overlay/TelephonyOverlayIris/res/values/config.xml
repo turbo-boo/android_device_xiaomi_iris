@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+
+     Qualcomm IMS stack, values from the stock overlay
+     product/overlay/TelephonyResCommon_Sys.apk. The packages listed here must be shipped:
+       org.codeaurora.ims      -> system_ext/app/ims
+       vendor.qti.imsrcs       -> system_ext/app/ImsRcsService
+       com.qualcomm.qti.uimGbaApp -> product/app/uimgbaservice
+-->
+<resources>
+    <!-- String indicating the package name of the device ImsService implementation for
+         MMTEL. -->
+    <string name="config_ims_mmtel_package" translatable="false">org.codeaurora.ims</string>
+
+    <!-- String indicating the package name of the device ImsService implementation for
+         RCS. -->
+    <string name="config_ims_rcs_package" translatable="false">vendor.qti.imsrcs</string>
+
+    <!-- Package name of the GBA service. -->
+    <string name="config_gba_package" translatable="false">com.qualcomm.qti.uimGbaApp</string>
+
+    <bool name="config_support_rtt">true</bool>
+</resources>

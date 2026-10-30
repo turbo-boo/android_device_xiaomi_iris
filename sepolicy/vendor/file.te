@@ -1,0 +1,14 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Fingerprint (FPC1020, TEE based; see fingerprint.default.so)
+type vendor_fingerprint_data_file, data_file_type, file_type;
+type vendor_fingerprint_data_file_fpdump, data_file_type, file_type;
+
+# Thermal (mi_thermald)
+type thermal_data_file, data_file_type, file_type;
+
+# Touch (xiaomi_touch.ko exports /dev/xiaomi-touch)
+type vendor_touchfeature_device, dev_type;

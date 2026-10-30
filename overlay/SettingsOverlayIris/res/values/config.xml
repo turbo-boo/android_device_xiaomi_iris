@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- The panel supports 60 Hz and 90 Hz modes (product/etc/device_features/iris.xml
+         fpsList). -->
+    <bool name="config_show_smooth_display">true</bool>
+
+    <!-- The stock ROM drives the vibrator through the Qualcomm CL vibrator HAL
+         (vendor.qti.hardware.vibrator-service), which implements amplitude control only
+         and therefore exposes two discrete intensity steps. -->
+    <integer name="config_vibration_supported_intensity_levels">2</integer>
+</resources>

@@ -1,0 +1,13 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Camera calibration and module data live on /mnt/vendor/persist/camera, which
+# the platform labels mnt_vendor_file; the qcom policy does not grant the camera
+# domain access to it.
+r_dir_file(hal_camera_default, mnt_vendor_file)
+
+# camx reads panel/display information and uses kgsl directly for some buffers
+r_dir_file(hal_camera_default, vendor_sysfs_graphics)
+allow hal_camera_default gpu_device:chr_file rw_file_perms;

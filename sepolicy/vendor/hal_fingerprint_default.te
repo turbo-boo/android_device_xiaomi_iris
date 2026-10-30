@@ -1,0 +1,36 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# The source-built AIDL service (hardware/xiaomi) runs in hal_fingerprint_default
+# and loads the stock FPC HAL blob in-process, so the blob's accesses belong to
+# this domain. The rule set mirrors what the stock vendor policy granted the
+# same blob (vendor_sepolicy.cil: tee_device, sysfs, netlink_socket).
+
+# TEE trustlet (fpc1020_platform_tee.ko)
+allow hal_fingerprint_default tee_device:chr_file rw_file_perms;
+
+# fpc1020 platform device attributes
+allow hal_fingerprint_default vendor_sysfs_fingerprint:dir r_dir_perms;
+allow hal_fingerprint_default vendor_sysfs_fingerprint:file rw_file_perms;
+
+# The blob enumerates /sys/bus/platform/devices
+allow hal_fingerprint_default sysfs:dir r_dir_perms;
+allow hal_fingerprint_default sysfs:file w_file_perms;
+
+# /data/vendor/{fpc,fpdump} and /mnt/vendor/persist/fpc
+allow hal_fingerprint_default vendor_fingerprint_data_file:dir create_dir_perms;
+allow hal_fingerprint_default vendor_fingerprint_data_file:file create_file_perms;
+allow hal_fingerprint_default vendor_fingerprint_data_file_fpdump:dir create_dir_perms;
+allow hal_fingerprint_default vendor_fingerprint_data_file_fpdump:file create_file_perms;
+
+# uevent/netlink listener
+allow hal_fingerprint_default self:netlink_socket create_socket_perms_no_ioctl;
+
+# The service rc keeps SYS_NICE
+allow hal_fingerprint_default self:capability sys_nice;
+
+# persist.vendor.sys.fp.* / persist.vendor.fingerprint.*
+get_prop(hal_fingerprint_default, vendor_fp_prop)
+set_prop(hal_fingerprint_default, vendor_fp_prop)

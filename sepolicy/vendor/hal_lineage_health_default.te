@@ -1,0 +1,9 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Charging control nodes: /sys/class/qcom-battery/input_suspend (first choice)
+# and /sys/class/power_supply/battery/input_suspend (fallback). Neither is
+# labelled by the platform or the qcom policy, so they resolve to plain sysfs.
+allow hal_lineage_health_default sysfs:file rw_file_perms;

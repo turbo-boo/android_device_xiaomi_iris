@@ -1,3 +1,3 @@
-ro.product.marketname=Redmi Note 10 JE
-ro.product.odm.marketname=Redmi Note 10 JE
+# ODM properties for the Redmi Note 10 JE (iris)
+
 ro.vendor.qti.va_odm.support=1

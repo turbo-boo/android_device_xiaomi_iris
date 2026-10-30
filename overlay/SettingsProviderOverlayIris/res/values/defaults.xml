@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Power on/off sounds are disabled on the stock ROM
+         (product/overlay/SettingsProviderCustResOverlay.apk). -->
+    <integer name="def_power_sounds_enabled">0</integer>
+</resources>

@@ -1,0 +1,11 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# FPC1020 platform device (fingerprint.default.so); the stock vendor policy
+# labelled the same nodes sysfs_fps_attr. Both device paths are listed because
+# the device may be created under /sys/devices/soc as well as
+# /sys/devices/platform/soc depending on the DT layout.
+genfscon sysfs /devices/platform/soc/soc:fpc1020 u:object_r:vendor_sysfs_fingerprint:s0
+genfscon sysfs /devices/soc/soc:fpc1020         u:object_r:vendor_sysfs_fingerprint:s0

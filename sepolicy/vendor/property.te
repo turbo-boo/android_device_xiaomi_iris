@@ -1,0 +1,11 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Fingerprint HAL: persist.vendor.sys.fp.* (legacy FPC HAL) and
+# persist.vendor.fingerprint.* (hardware/xiaomi AIDL sysprop library).
+vendor_restricted_prop(vendor_fp_prop)
+
+# Thermal: vendor.sys.thermal.* written by mi_thermald, read by the framework.
+vendor_restricted_prop(vendor_thermal_normal_prop)

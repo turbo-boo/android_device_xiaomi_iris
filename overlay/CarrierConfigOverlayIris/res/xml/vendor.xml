@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+
+     Japanese carrier configuration. Sources:
+       product/overlay/MiuiCarrierConfigOverlay.apk (res/xml/vendor_device.xml)
+       product/overlay/CarrierConfigResCommon_Sys.apk (res/xml/vendor.xml)
+     MIUI-only keys (carrier_app_wake_signal_config pointing at com.android.settings'
+     MiuiSettingsReceiver, cust_region="jp_kd", lte_rsrp/rssnr thresholds) are dropped.
+     Each <carrier_config> matches a single MNC: DefaultCarrierConfigService.checkFilters()
+     compares mnc with String.equals(), so comma-separated lists never match.
+-->
+<carrier_config_list>
+    <!-- au (KDDI) / UQ mobile, no video calling -->
+    <carrier_config mcc="440" mnc="07">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <int name="imsi_key_availability_int" value="2" />
+        <string name="imsi_key_download_url_string">https://wificert.kddi.com/android</string>
+        <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="440" mnc="08">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <int name="imsi_key_availability_int" value="2" />
+        <string name="imsi_key_download_url_string">https://wificert.kddi.com/android</string>
+        <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="440" mnc="55">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <int name="imsi_key_availability_int" value="2" />
+        <string name="imsi_key_download_url_string">https://wificert.kddi.com/android</string>
+        <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="440" mnc="56">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <int name="imsi_key_availability_int" value="2" />
+        <string name="imsi_key_download_url_string">https://wificert.kddi.com/android</string>
+        <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="440" mnc="70">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <int name="imsi_key_availability_int" value="2" />
+        <string name="imsi_key_download_url_string">https://wificert.kddi.com/android</string>
+        <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="440" mnc="71">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <int name="imsi_key_availability_int" value="2" />
+        <string name="imsi_key_download_url_string">https://wificert.kddi.com/android</string>
+        <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="440" mnc="72">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <int name="imsi_key_availability_int" value="2" />
+        <string name="imsi_key_download_url_string">https://wificert.kddi.com/android</string>
+        <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="440" mnc="73">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <int name="imsi_key_availability_int" value="2" />
+        <string name="imsi_key_download_url_string">https://wificert.kddi.com/android</string>
+        <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="440" mnc="74">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <int name="imsi_key_availability_int" value="2" />
+        <string name="imsi_key_download_url_string">https://wificert.kddi.com/android</string>
+        <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="440" mnc="75">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <int name="imsi_key_availability_int" value="2" />
+        <string name="imsi_key_download_url_string">https://wificert.kddi.com/android</string>
+        <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="440" mnc="76">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <int name="imsi_key_availability_int" value="2" />
+        <string name="imsi_key_download_url_string">https://wificert.kddi.com/android</string>
+        <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="440" mnc="77">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <int name="imsi_key_availability_int" value="2" />
+        <string name="imsi_key_download_url_string">https://wificert.kddi.com/android</string>
+        <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="440" mnc="78">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <int name="imsi_key_availability_int" value="2" />
+        <string name="imsi_key_download_url_string">https://wificert.kddi.com/android</string>
+        <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="440" mnc="79">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <int name="imsi_key_availability_int" value="2" />
+        <string name="imsi_key_download_url_string">https://wificert.kddi.com/android</string>
+        <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="440" mnc="88">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <int name="imsi_key_availability_int" value="2" />
+        <string name="imsi_key_download_url_string">https://wificert.kddi.com/android</string>
+        <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="440" mnc="89">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <int name="imsi_key_availability_int" value="2" />
+        <string name="imsi_key_download_url_string">https://wificert.kddi.com/android</string>
+        <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    </carrier_config>
+
+    <!-- au VoLTE + video calling -->
+    <carrier_config mcc="440" mnc="50">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <boolean name="carrier_vt_available_bool" value="true" />
+        <boolean name="carrier_allow_deflect_ims_call_bool" value="true" />
+        <int name="imsi_key_availability_int" value="2" />
+        <string name="imsi_key_download_url_string">https://wificert.kddi.com/android</string>
+        <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    </carrier_config>
+
+    <carrier_config mcc="440" mnc="51">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <boolean name="carrier_allow_deflect_ims_call_bool" value="true" />
+        <int name="imsi_key_availability_int" value="2" />
+        <string name="imsi_key_download_url_string">https://wificert.kddi.com/android</string>
+        <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="440" mnc="52">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <boolean name="carrier_allow_deflect_ims_call_bool" value="true" />
+        <int name="imsi_key_availability_int" value="2" />
+        <string name="imsi_key_download_url_string">https://wificert.kddi.com/android</string>
+        <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="440" mnc="53">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <boolean name="carrier_allow_deflect_ims_call_bool" value="true" />
+        <int name="imsi_key_availability_int" value="2" />
+        <string name="imsi_key_download_url_string">https://wificert.kddi.com/android</string>
+        <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="440" mnc="54">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <boolean name="carrier_allow_deflect_ims_call_bool" value="true" />
+        <int name="imsi_key_availability_int" value="2" />
+        <string name="imsi_key_download_url_string">https://wificert.kddi.com/android</string>
+        <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    </carrier_config>
+
+    <!-- NTT docomo -->
+    <carrier_config mcc="440" mnc="10">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <boolean name="carrier_vt_available_bool" value="true" />
+    </carrier_config>
+
+    <!-- Remaining Japanese networks -->
+    <carrier_config mcc="440" mnc="11">
+        <boolean name="carrier_volte_available_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="440" mnc="20">
+        <boolean name="carrier_volte_available_bool" value="true" />
+    </carrier_config>
+
+    <carrier_config mcc="441" mnc="70">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <int name="imsi_key_availability_int" value="2" />
+        <string name="imsi_key_download_url_string">https://wificert.kddi.com/android</string>
+        <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    </carrier_config>
+
+    <!-- au application certificates (au one wallet, UQ mobile, KDDI mail) -->
+    <carrier_config gid1="10" mcc="440" mnc="51">
+        <string-array name="carrier_certificate_string_array" num="4">
+            <item value="108897103871B684844AA7C791E0C812AB3966576FB5D3713C2D11794C0600AD:com.kddi.cs.app001" />
+            <item value="5EA3181DF228B4F8B0DECC10B21783F8C6C397F1290F2395FE3E6FDB2B52E991:jp.uqmobile.uqmobileportalapp" />
+            <item value="891ABE3F0A0D794AD46200DC2374AFF61AFA82711C360EE0CB49C3E6BB2BA006:jp.auone.wallet" />
+            <item value="1001568BB4A4E65F68C8B0F2E5C9EBC97FF719898F39E421DAF29A8DACEAAF1B:com.kddi.android.cmail" />
+        </string-array>
+    </carrier_config>
+
+    <carrier_config gid1="20" mcc="440" mnc="51">
+        <string-array name="carrier_certificate_string_array" num="4">
+            <item value="108897103871B684844AA7C791E0C812AB3966576FB5D3713C2D11794C0600AD:com.kddi.cs.app001" />
+            <item value="5EA3181DF228B4F8B0DECC10B21783F8C6C397F1290F2395FE3E6FDB2B52E991:jp.uqmobile.uqmobileportalapp" />
+            <item value="891ABE3F0A0D794AD46200DC2374AFF61AFA82711C360EE0CB49C3E6BB2BA006:jp.auone.wallet" />
+            <item value="1001568BB4A4E65F68C8B0F2E5C9EBC97FF719898F39E421DAF29A8DACEAAF1B:com.kddi.android.cmail" />
+        </string-array>
+    </carrier_config>
+
+    <carrier_config gid1="26" mcc="440" mnc="51">
+        <string-array name="carrier_certificate_string_array" num="4">
+            <item value="108897103871B684844AA7C791E0C812AB3966576FB5D3713C2D11794C0600AD:com.kddi.cs.app001" />
+            <item value="5EA3181DF228B4F8B0DECC10B21783F8C6C397F1290F2395FE3E6FDB2B52E991:jp.uqmobile.uqmobileportalapp" />
+            <item value="891ABE3F0A0D794AD46200DC2374AFF61AFA82711C360EE0CB49C3E6BB2BA006:jp.auone.wallet" />
+            <item value="1001568BB4A4E65F68C8B0F2E5C9EBC97FF719898F39E421DAF29A8DACEAAF1B:com.kddi.android.cmail" />
+        </string-array>
+    </carrier_config>
+</carrier_config_list>

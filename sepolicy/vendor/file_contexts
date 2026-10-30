@@ -1,0 +1,26 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Fingerprint (FPC1020)
+/data/vendor/fpc(/.*)?                                                    u:object_r:vendor_fingerprint_data_file:s0
+/data/vendor/fpdump(/.*)?                                                 u:object_r:vendor_fingerprint_data_file_fpdump:s0
+/mnt/vendor/persist/fpc(/.*)?                                             u:object_r:vendor_fingerprint_data_file:s0
+/sys/bus/(soc|platform/soc)/devices/soc:fpc1020(/.*)?                     u:object_r:vendor_sysfs_fingerprint:s0
+/sys/devices/(soc|platform/soc)/soc:fpc1020(/.*)?                         u:object_r:vendor_sysfs_fingerprint:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint-service\.xiaomi u:object_r:hal_fingerprint_default_exec:s0
+
+# NFC / secure element
+/dev/assd                                                                 u:object_r:secure_element_device:s0
+/(vendor|system/vendor)/bin/hw/vendor\.nxp\.hardware\.nfc@2\.0-service     u:object_r:hal_nfc_default_exec:s0
+
+# Sensors
+/(vendor|system/vendor)/bin/hw/android\.hardware\.sensors-service\.xiaomi-multihal u:object_r:hal_sensors_default_exec:s0
+
+# Thermal
+/data/vendor/thermal(/.*)?                                                u:object_r:thermal_data_file:s0
+/(vendor|system/vendor)/bin/mi_thermald                                   u:object_r:mi_thermald_exec:s0
+
+# Touch
+/dev/xiaomi-touch                                                         u:object_r:vendor_touchfeature_device:s0

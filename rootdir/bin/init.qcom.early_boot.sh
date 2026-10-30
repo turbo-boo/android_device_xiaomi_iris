@@ -255,6 +255,9 @@ case "$target" in
         # 196610 is decimal for 0x30002 to report version 3.2
         case "$soc_hwid" in
             294|295|296|297|298|313|353|354|363|364)
+                # Disable adsprpcd_sensorspd daemon
+                setprop vendor.fastrpc.disable.adsprpcd_sensorspd.daemon 1
+
                 setprop vendor.opengles.version 196610
                 if [ $soc_hwid = 354 ]
                 then
@@ -433,7 +436,7 @@ case "$target" in
                  KernelVersionB=${KernelVersionS%.*}
 
                  if [ $KernelVersionA -ge 4 ] && [ $KernelVersionB -ge 14 ]; then
-                     setprop ctl.vendor.qrtrns_enable 1
+                     setprop init.svc.vendor.qrtrns.enable 1
                  fi
                  ;;
            esac
@@ -487,6 +490,14 @@ esac
 
 case "$product" in
         "msmnile_gvmq")
+         setprop vendor.display.lcd_density 160
+         ;;
+        *)
+        ;;
+esac
+
+case "$product" in
+        "msmnile_gvmgh")
          setprop vendor.display.lcd_density 160
          ;;
         *)

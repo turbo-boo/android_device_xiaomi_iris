@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+
+     WCN39xx (qca_cld3) 1x1 802.11ac, dual band 2.4/5 GHz. Values taken from the stock
+     overlays product/overlay/WifiResCommon_Sys.apk and
+     product/overlay/AospWifiResOverlay.apk. The 6 GHz / 11ax flags present in the stock
+     WifiResCommon_Sys overlay are not carried over: that overlay is a multi-device
+     Xiaomi common overlay and this chipset has no 6 GHz or 802.11ax support.
+-->
+<resources>
+    <bool name="config_wifi5ghzSupport">true</bool>
+
+    <bool name="config_wifi_background_scan_support">true</bool>
+
+    <bool name="config_wifi_connected_mac_randomization_supported">true</bool>
+    <bool name="config_wifi_p2p_mac_randomization_supported">true</bool>
+
+    <bool name="config_wifi_softap_acs_supported">true</bool>
+    <bool name="config_wifi_softap_ieee80211ac_supported">true</bool>
+    <bool name="config_wifi_softap_sae_supported">true</bool>
+
+    <bool name="config_wifi_only_link_same_credential_configurations">false</bool>
+
+    <integer name="config_wifiHardwareSoftapMaxClientCount">32</integer>
+
+    <integer name="config_wifiDelayDisconnectOnImsLostMs">1000</integer>
+
+    <string name="config_wifi_tcp_buffers" translatable="false">524288,1048576,16777216,262144,524288,16777216</string>
+</resources>

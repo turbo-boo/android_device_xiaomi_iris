@@ -1,0 +1,8 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# NXP SN100: the eSE (FeliCa) is reached through the NFC controller, and
+# /dev/assd is the secure element stream exported by the nq-nci driver.
+allow hal_nfc_default secure_element_device:chr_file rw_file_perms;

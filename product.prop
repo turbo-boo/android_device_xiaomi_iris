@@ -1,21 +1,5 @@
-af.fast_track_multiplier=1
-audio.deep_buffer.media=true
-audio.offload.min.duration.secs=30
-audio.offload.video=true
-audio.sys.mute.latency.factor=2
-audio.sys.noisy.broadcast.delay=500
-audio.sys.offload.pstimeout.secs=3
-audio.sys.routing.latency=0
-media.stagefright.audio.deep=false
-ro.af.client_heap_size_kbyte=7168
-ro.com.google.acsa=true
-ro.com.google.gmsversion=11_202108
-ro.com.google.ime.system_lm_dir=product/usr/share/ime/google/d3_lms/
-ro.miui.build.region=global
-ro.miui.google.csp=true
-ro.opa.eligible_device=true
-ro.product.marketname=Redmi Note 10 JE
-ro.product.mod_device=iris_jp_kd_global
-ro.product.product.marketname=Redmi Note 10 JE
-ro.setupwizard.rotation_locked=true
-setupwizard.theme=glif_v3_light
+# Product properties for the Redmi Note 10 JE (iris)
+
+# FeliCa (Osaifu-Keitai) module parity: the MobileFeliCa apps shipped in
+# /product/app check the device certificate.
+ro.product.cert=XIG02

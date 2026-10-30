@@ -1,28 +1,32 @@
 #
-# Copyright (C) 2022 The LineageOS Project
-#
+# SPDX-FileCopyrightText: The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
 #
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+TARGET_SUPPORTS_OMX_SERVICE := false
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit from iris device
 $(call inherit-product, device/xiaomi/iris/device.mk)
 
-PRODUCT_DEVICE := iris
+# Inherit some common Lineage stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
+# Mobile FeliCa checks ro.product.model, so keep the stock KDDI SKU identity.
 PRODUCT_NAME := lineage_iris
+PRODUCT_DEVICE := iris
+PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := Redmi
-PRODUCT_MODEL := iris for arm64
-PRODUCT_MANUFACTURER := xiaomi
+PRODUCT_MODEL := XIG02
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="iris-user 11 RKQ1.210327.001 V12.5.12.0.RKRJPKD release-keys"
-
-BUILD_FINGERPRINT := Redmi/iris/iris:11/RKQ1.210327.001/V12.5.12.0.RKRJPKD:user/release-keys
+    BuildDesc="XIG02_jp_kdi-user 13 TKQ1.220905.001 V14.0.21.0.TKRJPKD release-keys" \
+    BuildFingerprint=Redmi/XIG02_jp_kdi/XIG02:13/TKQ1.220905.001/V14.0.21.0.TKRJPKD:user/release-keys \
+    DeviceName=XIG02 \
+    DeviceProduct=XIG02_jp_kdi \
+    SystemDevice=XIG02 \
+    SystemName=XIG02_jp_kdi
