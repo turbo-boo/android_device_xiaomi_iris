@@ -1648,7 +1648,6 @@ vendor/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so;MODULE_SUFFIX=_vendor
 
 # Miscellaneous
 odm/etc/build_kddi.prop
-product/data-app/XMRemoteController/XMRemoteController.apk
 product/etc/device_features/XIG02.xml
 product/etc/device_features/iris.xml
 vendor/app/CACertService/CACertService.apk
