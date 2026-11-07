@@ -163,6 +163,8 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/mediadrm/libwvdrmengine.so',
     ): blob_fixup()
         .add_needed('libcrypto_shim.so'),
+    'vendor/lib64/camera/components/com.qti.node.mialgocontrol.so': blob_fixup()
+        .strip_debug_sections(),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
