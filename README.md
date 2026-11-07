@@ -31,9 +31,9 @@ au (KDDI) Redmi Note 10 JE, `XIG02`, codename `iris`.
 
 Xiaomi has not published the iris kernel source. The stock
 `5.4.259-perf` kernel, its DTBs, DTBO and the 40 vendor modules it loads are
-shipped from `prebuilts/`. `kernel/oneplus/sm4350` (same SoC, msm-5.4) is only
-used to generate the UAPI headers needed by the `hardware/qcom-caf` HALs; it
-is not compiled.
+shipped from [`device/xiaomi/iris-kernel`](https://github.com/turbo-boo/android_device_xiaomi_iris-kernel).
+`kernel/oneplus/sm4350` (same SoC, msm-5.4) is only used to generate the UAPI
+headers needed by the `hardware/qcom-caf` HALs; it is not compiled.
 
 The stock kernel is built without `CONFIG_USERFAULTFD`, so the userfaultfd GC
 is disabled.

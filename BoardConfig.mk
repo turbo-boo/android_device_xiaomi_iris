@@ -4,6 +4,7 @@
 #
 
 DEVICE_PATH := device/xiaomi/iris
+KERNEL_PATH := $(DEVICE_PATH)-kernel
 
 # A/B
 AB_OTA_UPDATER := true
@@ -85,21 +86,22 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
 # Xiaomi has not published the iris kernel source, so the stock MIUI
-# V14.0.26.0 kernel (5.4.259-perf) is shipped as a prebuilt. The kernel source
-# below is the same SoC (SM4350/holi, msm-5.4) and is only used to generate
-# the UAPI headers required by the hardware/qcom-caf HALs.
+# V14.0.26.0 kernel (5.4.259-perf), DTB, DTBO and vendor modules are shipped as
+# prebuilts from device/xiaomi/iris-kernel. The kernel source below is the same
+# SoC (SM4350/holi, msm-5.4) and is only used to generate the UAPI headers
+# required by the hardware/qcom-caf HALs.
 TARGET_FORCE_PREBUILT_KERNEL := true
 TARGET_KERNEL_CONFIG := vendor/holi-qgki_defconfig
 TARGET_KERNEL_NO_GCC := true
 TARGET_KERNEL_SOURCE := kernel/oneplus/sm4350
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilts/kernel
+TARGET_PREBUILT_KERNEL := $(KERNEL_PATH)/kernel
 
-BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilts/dtb
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilts/dtbo.img
+BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtb
+BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbo.img
 
 # Kernel modules
-BOARD_VENDOR_KERNEL_MODULES := $(wildcard $(DEVICE_PATH)/prebuilts/modules/*.ko)
-BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules.load))
+BOARD_VENDOR_KERNEL_MODULES := $(wildcard $(KERNEL_PATH)/vendor/*.ko)
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/vendor/modules.load))
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
