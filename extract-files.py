@@ -163,6 +163,17 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/camera/components/com.qti.node.mialgocontrol.so': blob_fixup()
         .strip_debug_sections()
         .add_needed('libpiex_shim.so'),
+    (
+        'vendor/lib/libalLDC.so',
+        'vendor/lib/libalhLDC.so',
+        'vendor/lib64/libalLDC.so',
+        'vendor/lib64/libalhLDC.so',
+    ): blob_fixup()
+        .clear_symbol_version('AHardwareBuffer_allocate')
+        .clear_symbol_version('AHardwareBuffer_describe')
+        .clear_symbol_version('AHardwareBuffer_lock')
+        .clear_symbol_version('AHardwareBuffer_release')
+        .clear_symbol_version('AHardwareBuffer_unlock'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
