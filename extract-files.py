@@ -116,8 +116,6 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
-    'system_ext/lib64/libwfdnative.so': blob_fixup()
-        .add_needed('libinput_shim.so'),
     'vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc': blob_fixup()
         .regex_replace('    start vendor.move_data_sh\n', '')
         .regex_replace('service vendor.move_data_sh /system/bin/move_widevine_data.sh\n    class late_start\n    user media\n    group media mediadrm system\n    disabled\n    oneshot\n', '')
