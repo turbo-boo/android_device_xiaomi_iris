@@ -1526,8 +1526,6 @@ vendor/lib64/libtime_genoff.so
 
 # Wi-Fi
 vendor/etc/init/vendor.qti.hardware.fstman@1.0-service.rc
-vendor/etc/init/vendor.qti.hardware.wifi.wifilearner@1.0-service.rc
-vendor/lib64/vendor.qti.hardware.wifi.wifilearner@1.0.so
 
 # Wi-Fi configs
 vendor/etc/wifi/aoa_cldb_falcon.bin
@@ -1608,7 +1606,6 @@ vendor/bin/subsystem_ramdump
 vendor/bin/test_diag
 vendor/bin/tloc_daemon
 vendor/bin/wdsdaemon
-vendor/bin/wifilearner
 vendor/build_kddi.prop
 vendor/etc/SVIConfig.xml
 vendor/etc/_mi.xml
