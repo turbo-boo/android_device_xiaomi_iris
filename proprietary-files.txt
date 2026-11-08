@@ -1050,41 +1050,11 @@ vendor/etc/libnfc-qrd-SN100.conf
 vendor/etc/libnfc-qrd-SN100_38_4MHZ.conf
 
 # Perf
-system_ext/etc/perf/wlc_model.tflite
-system_ext/lib/vendor.qti.hardware.perf@2.0.so
-system_ext/lib/vendor.qti.hardware.perf@2.1.so
-system_ext/lib64/vendor.qti.hardware.perf@2.0.so
-system_ext/lib64/vendor.qti.hardware.perf@2.1.so
-vendor/bin/hw/vendor.qti.hardware.perf@2.2-service
-vendor/etc/init/vendor.qti.hardware.perf@2.2-service.rc
-vendor/etc/perf/commonresourceconfigs.xml
-vendor/etc/perf/commonsysnodesconfigs.xml
-vendor/etc/perf/perfboostsconfig.xml
-vendor/etc/perf/perfconfigstore.xml
-vendor/etc/perf/targetconfig.xml
-vendor/etc/perf/targetresourceconfigs.xml
-vendor/etc/powerhint.xml
-vendor/lib/libperfconfig.so
-vendor/lib/libperfgluelayer.so
 vendor/lib/vendor.qti.memory.pasrmanager@1.0.so
 vendor/lib/vendor.qti.memory.pasrmanager@1.1.so
-vendor/lib64/libperfconfig.so
-vendor/lib64/libperfgluelayer.so
 vendor/lib64/vendor.qti.hardware.limits@1.0.so
 vendor/lib64/vendor.qti.memory.pasrmanager@1.0.so
 vendor/lib64/vendor.qti.memory.pasrmanager@1.1.so
-
-# Perf IOP
-vendor/bin/hw/vendor.qti.hardware.iop@2.0-service
-vendor/etc/init/vendor.qti.hardware.iop@2.0-service.rc
-vendor/lib/libqti-iopd-client.so
-vendor/lib/libqti-util.so
-vendor/lib/vendor.qti.hardware.iop@1.0.so
-vendor/lib/vendor.qti.hardware.iop@2.0.so;MODULE_SUFFIX=_vendor
-vendor/lib64/libqti-iopd-client.so
-vendor/lib64/libqti-util.so
-vendor/lib64/vendor.qti.hardware.iop@1.0.so
-vendor/lib64/vendor.qti.hardware.iop@2.0.so;MODULE_SUFFIX=_vendor
 
 # QCC
 system_ext/lib/libqcc_file_agent_sys.so
@@ -1925,8 +1895,6 @@ vendor/lib/libqrtrclient.so
 vendor/lib/libqsap_sdk.so
 vendor/lib/libqseed3.so
 vendor/lib/libqtbase.so
-vendor/lib/libqti-iopd.so
-vendor/lib/libqti-perfd.so
 vendor/lib/libqti-utils.so
 vendor/lib/libqtigef.so
 vendor/lib/libqtjsonhelper.so
@@ -2029,7 +1997,6 @@ vendor/lib64/libadreno_app_profiles.so
 vendor/lib64/libaidenoiser.so
 vendor/lib64/libalCFR.so
 vendor/lib64/libaoa.so
-vendor/lib64/libappclassifier.so
 vendor/lib64/libarcsoft_dualcam_refocus_image.so
 vendor/lib64/libarcsoft_portrait_lighting.so
 vendor/lib64/libarcsoft_portrait_lighting_c.so
@@ -2085,7 +2052,6 @@ vendor/lib64/libipebpsstriping.so
 vendor/lib64/libipebpsstriping170.so
 vendor/lib64/libjnihelper.so
 vendor/lib64/libjpege.so
-vendor/lib64/liblearningmodule.so
 vendor/lib64/liblistensoundmodel2.so
 vendor/lib64/libllvm-qcom.so
 vendor/lib64/libloadalgo_stub.so
@@ -2095,8 +2061,6 @@ vendor/lib64/liblowi_wifihal.so
 vendor/lib64/liblqe.so
 vendor/lib64/libmctfengine_stub.so
 vendor/lib64/libmdsprpc.so
-vendor/lib64/libmemperfd.so
-vendor/lib64/libmeters.so
 vendor/lib64/libmfec.so
 vendor/lib64/libmiai_supernight.so
 vendor/lib64/libmialgoengine.so
@@ -2140,8 +2104,6 @@ vendor/lib64/libqrtrclient.so
 vendor/lib64/libqsap_sdk.so
 vendor/lib64/libqseed3.so
 vendor/lib64/libqtbase.so
-vendor/lib64/libqti-iopd.so
-vendor/lib64/libqti-perfd.so
 vendor/lib64/libqti-utils.so
 vendor/lib64/libqtigef.so
 vendor/lib64/libqtjsonhelper.so
@@ -2149,7 +2111,6 @@ vendor/lib64/libqtnodes.so
 vendor/lib64/librcmask.so
 vendor/lib64/librecovery_updater.so
 vendor/lib64/librecovery_updater_msm.so
-vendor/lib64/libreffeature.so
 vendor/lib64/libril-db.so
 vendor/lib64/libril-qc-ltedirectdisc.so
 vendor/lib64/libril-qc-radioconfig.so
