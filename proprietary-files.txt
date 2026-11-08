@@ -1945,8 +1945,6 @@ vendor/lib/libpdnotifier.so
 vendor/lib/libperfioctl.so
 vendor/lib/libpowercallback.so
 vendor/lib/libpowercore.so
-vendor/lib/libprotobuf-cpp-full-3.9.1.so
-vendor/lib/libprotobuf-cpp-lite-3.9.1.so
 vendor/lib/libqc2colorconvertfilter.so
 vendor/lib/libqc2filter.so
 vendor/lib/libqcci_legacy.so
@@ -2159,8 +2157,6 @@ vendor/lib64/libpdnotifier.so
 vendor/lib64/libperfioctl.so
 vendor/lib64/libpowercallback.so
 vendor/lib64/libpowercore.so
-vendor/lib64/libprotobuf-cpp-full-3.9.1.so
-vendor/lib64/libprotobuf-cpp-lite-3.9.1.so
 vendor/lib64/libqc2colorconvertfilter.so
 vendor/lib64/libqc2filter.so
 vendor/lib64/libqcci_legacy.so
