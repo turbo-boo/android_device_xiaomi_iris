@@ -119,12 +119,8 @@ vendor/lib/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so
 vendor/lib/libbluetooth_audio_session_qti.so
 vendor/lib/libbluetooth_audio_session_qti_2_1.so
-vendor/lib/vendor.qti.hardware.bluetooth_audio@2.0.so;MODULE_SUFFIX=_vendor
-vendor/lib/vendor.qti.hardware.bluetooth_audio@2.1.so
 vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib/vendor.qti.hardware.bluetooth_sar@1.1.so
-vendor/lib/vendor.qti.hardware.btconfigstore@1.0.so;MODULE_SUFFIX=_vendor
-vendor/lib/vendor.qti.hardware.btconfigstore@2.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
@@ -133,12 +129,8 @@ vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so
 vendor/lib64/libbluetooth_audio_session_qti.so
 vendor/lib64/libbluetooth_audio_session_qti_2_1.so
-vendor/lib64/vendor.qti.hardware.bluetooth_audio@2.0.so;MODULE_SUFFIX=_vendor
-vendor/lib64/vendor.qti.hardware.bluetooth_audio@2.1.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
-vendor/lib64/vendor.qti.hardware.btconfigstore@1.0.so;MODULE_SUFFIX=_vendor
-vendor/lib64/vendor.qti.hardware.btconfigstore@2.0.so;MODULE_SUFFIX=_vendor
 
 # Camera
 vendor/lib/camera/com.qti.eeprom.irs2381c_polar.so
@@ -328,10 +320,8 @@ vendor/lib/libvidhance.so
 vendor/lib/libwa_dof.so
 vendor/lib/libwa_refocus.so
 vendor/lib/libwa_rtdof.so
-vendor/lib/vendor.qti.hardware.camera.device@1.0.so
 vendor/lib/vendor.qti.hardware.camera.device@3.5.so
 vendor/lib/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
-vendor/lib/vendor.qti.hardware.camera.postproc@1.0.so
 vendor/lib/vendor.qti.hardware.scve.objecttracker@1.0.so
 vendor/lib/vendor.qti.hardware.scve.panorama@1.0.so
 vendor/lib/vendor.qti.hardware.seccam@1.0.so;MODULE_SUFFIX=_vendor
@@ -534,10 +524,8 @@ vendor/lib64/libwa_dof.so
 vendor/lib64/libwa_refocus.so
 vendor/lib64/libwa_rtdof.so
 vendor/lib64/libxmi_high_dynamic_range.so
-vendor/lib64/vendor.qti.hardware.camera.device@1.0.so
 vendor/lib64/vendor.qti.hardware.camera.device@3.5.so
 vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
-vendor/lib64/vendor.qti.hardware.camera.postproc@1.0.so
 vendor/lib64/vendor.qti.hardware.scve.objecttracker@1.0.so
 vendor/lib64/vendor.qti.hardware.scve.panorama@1.0.so
 vendor/lib64/vendor.qti.hardware.seccam@1.0.so;MODULE_SUFFIX=_vendor
@@ -704,9 +692,7 @@ vendor/lib64/vendor.qti.latency@2.0.so;MODULE_SUFFIX=_vendor
 vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service
 vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc
 vendor/lib/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
-vendor/lib/vendor.qti.hardware.capabilityconfigstore@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.capabilityconfigstore@1.0.so;MODULE_SUFFIX=_vendor
 
 # CVP
 vendor/lib/vendor.qti.hardware.cvp@1.0.so;MODULE_SUFFIX=_vendor
@@ -1066,17 +1052,11 @@ vendor/etc/perf/targetresourceconfigs.xml
 vendor/etc/powerhint.xml
 vendor/lib/libperfconfig.so
 vendor/lib/libperfgluelayer.so
-vendor/lib/vendor.qti.hardware.perf@2.0.so;MODULE_SUFFIX=_vendor
-vendor/lib/vendor.qti.hardware.perf@2.1.so;MODULE_SUFFIX=_vendor
-vendor/lib/vendor.qti.hardware.perf@2.2.so;MODULE_SUFFIX=_vendor
 vendor/lib/vendor.qti.memory.pasrmanager@1.0.so
 vendor/lib/vendor.qti.memory.pasrmanager@1.1.so
 vendor/lib64/libperfconfig.so
 vendor/lib64/libperfgluelayer.so
 vendor/lib64/vendor.qti.hardware.limits@1.0.so
-vendor/lib64/vendor.qti.hardware.perf@2.0.so;MODULE_SUFFIX=_vendor
-vendor/lib64/vendor.qti.hardware.perf@2.1.so;MODULE_SUFFIX=_vendor
-vendor/lib64/vendor.qti.hardware.perf@2.2.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.memory.pasrmanager@1.0.so
 vendor/lib64/vendor.qti.memory.pasrmanager@1.1.so
 
@@ -1501,13 +1481,7 @@ vendor/bin/hw/vendor.qti.hardware.servicetracker@1.2-service
 vendor/etc/init/vendor.qti.hardware.servicetracker@1.2-service.rc
 vendor/etc/vintf/manifest/vendor.qti.hardware.servicetracker@1.2-service.xml
 vendor/lib/hw/vendor.qti.hardware.servicetracker@1.2-impl.so
-vendor/lib/vendor.qti.hardware.servicetracker@1.0.so
-vendor/lib/vendor.qti.hardware.servicetracker@1.1.so
-vendor/lib/vendor.qti.hardware.servicetracker@1.2.so
 vendor/lib64/hw/vendor.qti.hardware.servicetracker@1.2-impl.so
-vendor/lib64/vendor.qti.hardware.servicetracker@1.0.so
-vendor/lib64/vendor.qti.hardware.servicetracker@1.1.so
-vendor/lib64/vendor.qti.hardware.servicetracker@1.2.so
 
 # Thermal
 vendor/bin/mi_thermald
@@ -1537,13 +1511,6 @@ vendor/lib64/libtime_genoff.so
 # Wi-Fi
 vendor/etc/init/vendor.qti.hardware.fstman@1.0-service.rc
 vendor/etc/init/vendor.qti.hardware.wifi.wifilearner@1.0-service.rc
-vendor/lib64/vendor.qti.hardware.fstman@1.0.so
-vendor/lib64/vendor.qti.hardware.wifi.hostapd@1.0.so
-vendor/lib64/vendor.qti.hardware.wifi.hostapd@1.1.so
-vendor/lib64/vendor.qti.hardware.wifi.hostapd@1.2.so
-vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.0.so
-vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.1.so
-vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.2.so
 vendor/lib64/vendor.qti.hardware.wifi.wifilearner@1.0.so
 
 # Wi-Fi configs
