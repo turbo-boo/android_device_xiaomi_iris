@@ -22,6 +22,7 @@ namespace_imports = [
     'hardware/qcom-caf/common/libqti-perfd-client',
     'hardware/qcom-caf/sm8350',
     'hardware/qcom-caf/wlan',
+    'hardware/qcom-caf/wlan/qcwcn',
     'hardware/xiaomi',
     'vendor/qcom/opensource/commonsys/display',
     'vendor/qcom/opensource/commonsys-intf/display',
