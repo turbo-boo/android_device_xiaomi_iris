@@ -99,7 +99,6 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.qti.hardware.radio.uim@1.1',
         'vendor.qti.hardware.radio.uim@1.2',
         'vendor.qti.hardware.seccam@1.0',
-        'vendor.qti.hardware.sigma_miracast@1.0',
         'vendor.qti.hardware.slmadapter@1.0',
         'vendor.qti.hardware.wifidisplaysession@1.0',
         'vendor.qti.ims.callcapability@1.0',

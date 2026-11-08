@@ -1537,13 +1537,10 @@ vendor/etc/wifi/aoa_cldb_swl14.bin
 system_ext/bin/wfdservice
 system_ext/etc/init/wfdservice.rc
 system_ext/lib/com.qualcomm.qti.wifidisplayhal@1.0.so
-system_ext/lib/hw/vendor.qti.hardware.sigma_miracast@1.0-impl.so
-system_ext/lib/libmiracastsystem.so
 system_ext/lib/libmmosal.so
 system_ext/lib/libmmparser_lite.so
 system_ext/lib/libmmrtpdecoder.so
 system_ext/lib/libmmrtpencoder.so
-system_ext/lib/libsigmautils.so
 system_ext/lib/libwfdavenhancements.so
 system_ext/lib/libwfdclient.so
 system_ext/lib/libwfdcommonutils.so
@@ -1560,16 +1557,11 @@ system_ext/lib/libwfduibcsink.so
 system_ext/lib/libwfduibcsinkinterface.so
 system_ext/lib/libwfduibcsrc.so
 system_ext/lib/libwfduibcsrcinterface.so
-system_ext/lib/vendor.qti.hardware.sigma_miracast@1.0-halimpl.so
-system_ext/lib/vendor.qti.hardware.sigma_miracast@1.0.so
 system_ext/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
-system_ext/lib64/hw/vendor.qti.hardware.sigma_miracast@1.0-impl.so
-system_ext/lib64/libmiracastsystem.so
 system_ext/lib64/libmmosal.so
 system_ext/lib64/libmmparser_lite.so
 system_ext/lib64/libmmrtpdecoder.so
 system_ext/lib64/libmmrtpencoder.so
-system_ext/lib64/libsigmautils.so
 system_ext/lib64/libwfdclient.so
 system_ext/lib64/libwfdcommonutils.so
 system_ext/lib64/libwfdconfigutils.so
@@ -1584,8 +1576,6 @@ system_ext/lib64/libwfduibcsink.so
 system_ext/lib64/libwfduibcsinkinterface.so
 system_ext/lib64/libwfduibcsrc.so
 system_ext/lib64/libwfduibcsrcinterface.so
-system_ext/lib64/vendor.qti.hardware.sigma_miracast@1.0-halimpl.so
-system_ext/lib64/vendor.qti.hardware.sigma_miracast@1.0.so
 system_ext/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
 system_ext/priv-app/WfdService/WfdService.apk
 vendor/bin/wfdhdcphalservice
@@ -1620,11 +1610,9 @@ vendor/lib/libwfduibcsinkinterface_proprietary.so
 vendor/lib/libwfduibcsrc_proprietary.so
 vendor/lib/libwfduibcsrcinterface_proprietary.so
 vendor/lib/libwfdutils_proprietary.so
-vendor/lib/vendor.qti.hardware.sigma_miracast@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib/vendor.qti.hardware.wifidisplaysession@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
 vendor/lib64/libwfdhdcpcp.so
-vendor/lib64/vendor.qti.hardware.sigma_miracast@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so;MODULE_SUFFIX=_vendor
 
 # Miscellaneous
@@ -1946,7 +1934,6 @@ vendor/lib/libmctfengine_stub.so
 vendor/lib/libmdsprpc.so
 vendor/lib/libmfec.so
 vendor/lib/libmiai_supernight.so
-vendor/lib/libmiracast.so
 vendor/lib/libmm-color-convertor.so
 vendor/lib/libmm-hdcpmgr.so
 vendor/lib/libmulawdec.so
@@ -2162,7 +2149,6 @@ vendor/lib64/libmeters.so
 vendor/lib64/libmfec.so
 vendor/lib64/libmiai_supernight.so
 vendor/lib64/libmialgoengine.so
-vendor/lib64/libmiracast.so
 vendor/lib64/libmm-color-convertor.so
 vendor/lib64/libmm-hdcpmgr.so
 vendor/lib64/libmorpho_Lowlight.so
