@@ -1941,10 +1941,8 @@ vendor/lib/libril-db.so
 vendor/lib/libril-qc-ltedirectdisc.so
 vendor/lib/libril-qc-radioconfig.so
 vendor/lib/libril-qcril-hook-oem.so
-vendor/lib/libril.so
 vendor/lib/librilqmimiscservices.so
 vendor/lib/librilqmiservices.so
-vendor/lib/librilutils.so
 vendor/lib/librpmb.so
 vendor/lib/libsdm-color.so
 vendor/lib/libsdm-colormgr-algo.so
@@ -2159,10 +2157,8 @@ vendor/lib64/libril-db.so
 vendor/lib64/libril-qc-ltedirectdisc.so
 vendor/lib64/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
-vendor/lib64/libril.so
 vendor/lib64/librilqmimiscservices.so
 vendor/lib64/librilqmiservices.so
-vendor/lib64/librilutils.so
 vendor/lib64/librpmb.so
 vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-colormgr-algo.so
