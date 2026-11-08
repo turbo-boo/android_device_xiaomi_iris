@@ -225,7 +225,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
 
 # Kernel
-# The stock kernel is built without CONFIG_USERFAULTFD.
+# The stock kernel is built without CONFIG_USERFAULTFD, so keep ART on the
+# concurrent copying GC instead of the lineage default userfaultfd GC.
 PRODUCT_ENABLE_UFFD_GC := false
 
 # Lineage Health
