@@ -179,6 +179,10 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libc++_shared_vf.so',
     ): blob_fixup()
         .fix_soname(),
+    'vendor/lib/libmmcamera_faceproc.so': blob_fixup()
+        .clear_symbol_version('__aeabi_memcpy')
+        .clear_symbol_version('__aeabi_memset')
+        .clear_symbol_version('__gnu_Unwind_Find_exidx'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
