@@ -148,12 +148,21 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
     (
+        'vendor/lib/libboot_control_qti.so',
+        'vendor/lib/nfc_nci.nqx.default.hw.so',
+        'vendor/lib64/libboot_control_qti.so',
+        'vendor/lib64/nfc_nci.nqx.default.hw.so',
+    ): blob_fixup()
+        .add_needed('libbase_shim.so'),
+    (
+        'vendor/lib/mediadrm/libwvdrmengine.so',
         'vendor/lib64/libwvhidl.so',
         'vendor/lib64/mediadrm/libwvdrmengine.so',
     ): blob_fixup()
         .add_needed('libcrypto_shim.so'),
     'vendor/lib64/camera/components/com.qti.node.mialgocontrol.so': blob_fixup()
-        .strip_debug_sections(),
+        .strip_debug_sections()
+        .add_needed('libpiex_shim.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
