@@ -229,6 +229,11 @@ PRODUCT_COPY_FILES += \
 # concurrent copying GC instead of the lineage default userfaultfd GC.
 PRODUCT_ENABLE_UFFD_GC := false
 
+# The prebuilt stock kernel (5.4.259) is older than the minimum 5.4 LTS that
+# the FCM 7 kernel requirements demand, so only skip the kernel part of the
+# OTA VINTF check. The boot-time check never looks at the kernel.
+PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
+
 # Lineage Health
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
