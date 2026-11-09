@@ -927,6 +927,7 @@ vendor/lib/vendor.qti.gnss@2.1.so
 vendor/lib/vendor.qti.gnss@3.0.so
 vendor/lib/vendor.qti.gnss@4.0-service.so
 vendor/lib/vendor.qti.gnss@4.0.so
+vendor/lib64/hw/android.hardware.gnss@2.1-impl-qti.so
 vendor/lib64/hw/vendor.qti.gnss@4.0-impl.so
 vendor/lib64/libasn1cper.so
 vendor/lib64/libasn1crt.so
