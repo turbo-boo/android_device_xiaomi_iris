@@ -224,11 +224,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
 
-# Kernel
-# The stock kernel is built without CONFIG_USERFAULTFD, so keep ART on the
-# concurrent copying GC instead of the lineage default userfaultfd GC.
-PRODUCT_ENABLE_UFFD_GC := false
-
 # The prebuilt stock kernel (5.4.259) is older than the minimum 5.4 LTS that
 # the FCM 7 kernel requirements demand, so only skip the kernel part of the
 # OTA VINTF check. The boot-time check never looks at the kernel.
