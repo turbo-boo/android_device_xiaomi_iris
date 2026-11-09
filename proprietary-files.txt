@@ -1071,6 +1071,11 @@ vendor/lib64/vendor.qti.hardware.qccvndhal@1.0-halimpl.so
 vendor/lib64/vendor.qti.hardware.qccvndhal@1.0.so;MODULE_SUFFIX=_vendor
 
 # Radio
+product/app/uimgbaservice/uimgbaservice.apk
+product/etc/permissions/UimGba.xml
+product/etc/permissions/UimService.xml
+product/framework/uimgbalibrary.jar
+product/framework/uimservicelibrary.jar
 system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
 system_ext/lib/vendor.qti.hardware.radio.lpa@1.0.so
 system_ext/lib/vendor.qti.hardware.radio.qtiradio@1.0.so
@@ -1170,6 +1175,18 @@ vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.radio.uim@1.2.so;MODULE_SUFFIX=_vendor
 
 # Radio (IMS)
+system_ext/app/ImsRcsService/ImsRcsService.apk
+system_ext/etc/permissions/vendor.qti.ims.rcsservice.xml
+system_ext/framework/vendor.qti.ims.connection-V1.0-java.jar
+system_ext/framework/vendor.qti.ims.factory-V2.0-java.jar
+system_ext/framework/vendor.qti.ims.factory-V2.1-java.jar
+system_ext/framework/vendor.qti.ims.factory-V2.2-java.jar
+system_ext/framework/vendor.qti.ims.rcssip-V1.0-java.jar
+system_ext/framework/vendor.qti.ims.rcssip-V1.1-java.jar
+system_ext/framework/vendor.qti.ims.rcssip-V1.2-java.jar
+system_ext/framework/vendor.qti.ims.rcsuce-V1.0-java.jar
+system_ext/framework/vendor.qti.ims.rcsuce-V1.1-java.jar
+system_ext/framework/vendor.qti.ims.rcsuce-V1.2-java.jar
 system_ext/lib/com.qualcomm.qti.imscmservice@2.0.so
 system_ext/lib/com.qualcomm.qti.imscmservice@2.1.so
 system_ext/lib/com.qualcomm.qti.uceservice@2.0.so
