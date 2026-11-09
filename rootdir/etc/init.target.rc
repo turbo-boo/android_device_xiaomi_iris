@@ -207,33 +207,6 @@ on charger
     setprop persist.vendor.chg.max_volt_mv 9000
     start mi_thermald
 
-on property:persist.odm.ril.oem.sno=*
-    setprop ro.ril.oem.sno ${persist.odm.ril.oem.sno}
-
-on property:persist.odm.ril.oem.psno=*
-    setprop ro.ril.oem.psno ${persist.odm.ril.oem.psno}
-
-on property:persist.odm.ril.oem.wifimac=*
-    setprop ro.ril.oem.wifimac ${persist.odm.ril.oem.wifimac}
-
-on property:persist.odm.ril.oem.btmac=*
-    setprop ro.ril.oem.btmac ${persist.odm.ril.oem.btmac}
-
-on property:persist.odm.ril.factory_id=*
-    setprop ro.ril.factory_id ${persist.odm.ril.factory_id}
-
-on property:persist.odm.ril.oem.imei1=*
-    setprop ro.ril.oem.imei1 ${persist.odm.ril.oem.imei1}
-
-on property:persist.odm.ril.oem.imei2=*
-    setprop ro.ril.oem.imei2 ${persist.odm.ril.oem.imei2}
-
-on property:sys.boot.hwc=*
-    setprop ro.boot.hwc ${sys.boot.hwc}
-
-on property:sys.boot.cpuid=*
-    setprop ro.boot.cpuid ${sys.boot.cpuid}
-
 # Thermal
 service mi_thermald /system/vendor/bin/mi_thermald
     class main
