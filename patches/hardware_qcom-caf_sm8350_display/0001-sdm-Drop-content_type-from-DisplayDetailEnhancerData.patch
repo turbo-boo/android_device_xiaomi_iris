@@ -1,0 +1,59 @@
+From 6f38fa5060a98427efb146764290fb022fe976ce Mon Sep 17 00:00:00 2001
+From: turbo-boo <59400127+turbo-boo@users.noreply.github.com>
+Date: Mon, 9 Nov 2026 21:11:29 +0900
+Subject: [PATCH] sdm: Drop content_type from DisplayDetailEnhancerData
+
+The Redmi Note 10 JE ships MIUI 14 (Android 13) display blobs that were
+built before content_type was added (LA.UM.9.14.r1-20000.01). The field
+makes HWDetailEnhanceData, and with it HWScaleData, 4 bytes larger, so
+HWPipeInfo::z_order, flags, valid and is_virtual sit 4 bytes later than
+in the prebuilt libsdmextension.so. Its ResourceImpl marks the pipes
+valid at offset 0x228, HWDeviceDRM::SetupAtomic() reads 0x22c, and no
+plane is ever staged: the panel stays black with the backlight on.
+
+Drop the field and the composer code that fills it. HWPipeInfo then has
+the layout of the stock libsdmcore.so again.
+---
+ composer/hwc_display_builtin.cpp     | 13 -------------
+ sdm/include/core/display_interface.h |  1 -
+ 2 files changed, 14 deletions(-)
+
+diff --git a/composer/hwc_display_builtin.cpp b/composer/hwc_display_builtin.cpp
+index 348d710..b7d9a4d 100644
+--- a/composer/hwc_display_builtin.cpp
++++ b/composer/hwc_display_builtin.cpp
+@@ -1365,19 +1365,6 @@ DisplayError HWCDisplayBuiltIn::SetHWDetailedEnhancerConfig(void *params) {
+         }
+       }
+ 
+-      switch (de_tuning_cfg_data->params.content_type) {
+-        case kDeContentTypeVideo:
+-          de_data.content_type = kContentTypeVideo;
+-          break;
+-        case kDeContentTypeGraphics:
+-          de_data.content_type = kContentTypeGraphics;
+-          break;
+-        case kDeContentTypeUnknown:
+-        default:
+-          de_data.content_type = kContentTypeUnknown;
+-          break;
+-      }
+-
+       if (de_tuning_cfg_data->params.flags & kDeTuningFlagDeBlend) {
+         de_data.override_flags |= kOverrideDEBlend;
+         de_data.de_blend = de_tuning_cfg_data->params.de_blend;
+diff --git a/sdm/include/core/display_interface.h b/sdm/include/core/display_interface.h
+index 7564970..9df9030 100644
+--- a/sdm/include/core/display_interface.h
++++ b/sdm/include/core/display_interface.h
+@@ -322,7 +322,6 @@ struct DisplayDetailEnhancerData {
+   ScalingFilterConfig filter_config = kFilterEdgeDirected;
+                                       // Y/RGB filter configuration
+   uint32_t de_blend = 0;              // DE Unsharp Mask blend between High and Low frequencies
+-  DeContentType content_type = kContentTypeUnknown;  // Specifies content type
+ };
+ 
+ /*! @brief This enum represents the supported display features that needs to be queried
+-- 
+2.43.0
+
