@@ -1,0 +1,105 @@
+From 5c298deab55ce7cfefec3b1cc9c79e9898f669e7 Mon Sep 17 00:00:00 2001
+From: xbill9 <xbill9@gmail.com>
+Date: Fri, 23 Oct 2026 23:20:23 -0400
+Subject: [PATCH] Connectivity: Run on the sargo 4.9 kernel (reported as 5.4)
+
+- NetBpfLoad: warn instead of failing on kernels below 5.10, as 23.2 did.
+- NetBpfLoad: hand off to uprobestatsbpfload only on 5.8+; its programs need
+  BPF ring buffers.
+- netd.c: extend the 5.4 ingress/egress stats programs to the newest API
+  level; Android 17 had no stats program below 5.10 and netd aborted.
+- ConnectivityService: skip the local-net and loopback ring buffer listeners
+  when their maps are absent; opening them aborted system_server.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Change-Id: I6a2f5c00750c09196561fc58ae7cbb6acf97f258
+---
+ bpf/loader/NetBpfLoad.cpp                             |  9 ++++++---
+ bpf/progs/netd.c                                      | 11 +++++++----
+ .../src/com/android/server/ConnectivityService.java   |  9 +++++++--
+ 3 files changed, 20 insertions(+), 9 deletions(-)
+
+diff --git a/bpf/loader/NetBpfLoad.cpp b/bpf/loader/NetBpfLoad.cpp
+index 7ba3247dcc6..4991c1ab321 100644
+--- a/bpf/loader/NetBpfLoad.cpp
++++ b/bpf/loader/NetBpfLoad.cpp
+@@ -1575,9 +1575,10 @@ static int doLoad(char** argv, char * const envp[]) {
+ 
+     // 25Q4 bumps the kernel requirement up to 5.10
+     // see also: //system/netd/tests/kernel_test.cpp TestKernel510
++    // Warn only, as LineageOS 23.2 did: sargo runs a 4.9 kernel with BPF
++    // backports that reports 5.4 to the BPF loader.
+     if (isAtLeast25Q4 && !isAtLeastKernelVersion(5, 10)) {
+-        ALOGE("Android 25Q4 requires kernel 5.10.");
+-        return 7;
++        ALOGW("Android 25Q4 requires kernel 5.10.");
+     }
+ 
+     // 26Q4 bumps the kernel requirement up to 5.15
+@@ -1873,7 +1874,9 @@ static int doLoad(char** argv, char * const envp[]) {
+     }
+ 
+     // unreachable before U QPR3
+-    if (exists(uprobestatsBpfLoader)) {
++    // The uprobestats programs need BPF ring buffers (kernel 5.8), which the
++    // sargo 4.9 kernel lacks, so go straight to the platform bpfloader there.
++    if (isAtLeastKernelVersion(5, 8) && exists(uprobestatsBpfLoader)) {
+       ALOGI("done, transferring control to uprobestatsbpfload.");
+       const char *args[] = {
+           uprobestatsBpfLoader,
+diff --git a/bpf/progs/netd.c b/bpf/progs/netd.c
+index e4cd7c93b40..9b9b0cc6ae9 100644
+--- a/bpf/progs/netd.c
++++ b/bpf/progs/netd.c
+@@ -1001,8 +1001,10 @@ DEFINE_NETD_BPF_PROG_RANGES(ingress, stats, 5_10, INF, 25Q2, 25Q4)
+     return bpf_traffic_account(skb, INGRESS, KVER_5_10, API(25Q2));
+ }
+ 
+-// Android 25Q2/25Q3 5.4 (localnet protection)
+-DEFINE_NETD_BPF_PROG_RANGES(ingress, stats, 5_4, 5_10, 25Q2, 25Q4)
++// Android 25Q2+ 5.4 (localnet protection)
++// Upstream stops at 25Q4; sargo runs a 4.9 kernel that reports 5.4 to the BPF
++// loader, so this is the only ingress/stats program left for it on 25Q4+.
++DEFINE_NETD_BPF_PROG_RANGES(ingress, stats, 5_4, 5_10, 25Q2, MAXAPI)
+ (struct __sk_buff* skb) {
+     return bpf_traffic_account(skb, INGRESS, KVER_5_4, API(25Q2));
+ }
+@@ -1057,8 +1059,9 @@ DEFINE_NETD_BPF_PROG_RANGES(egress, stats, 5_10, INF, 25Q2, 25Q4)
+     return bpf_traffic_account(skb, EGRESS, KVER_5_10, API(25Q2));
+ }
+ 
+-// Android 25Q2/25Q3 5.4 (localnet protection)
+-DEFINE_NETD_BPF_PROG_RANGES(egress, stats, 5_4, 5_10, 25Q2, 25Q4)
++// Android 25Q2+ 5.4 (localnet protection)
++// Upstream stops at 25Q4; see ingress/stats above.
++DEFINE_NETD_BPF_PROG_RANGES(egress, stats, 5_4, 5_10, 25Q2, MAXAPI)
+ (struct __sk_buff* skb) {
+     return bpf_traffic_account(skb, EGRESS, KVER_5_4, API(25Q2));
+ }
+diff --git a/service/src/com/android/server/ConnectivityService.java b/service/src/com/android/server/ConnectivityService.java
+index 7682d508263..4384947ac40 100644
+--- a/service/src/com/android/server/ConnectivityService.java
++++ b/service/src/com/android/server/ConnectivityService.java
+@@ -2655,7 +2655,10 @@ protected ConnectivityService(Context context, IDnsResolver dnsresolver,
+                 ? mDeps.makeMultiProxyTracker(mContext, mHandler)
+                 : mDeps.makeProxyTracker(mContext, mHandler);
+ 
+-        if (mDeps.isAtLeastB()) {
++        // The listener reads a BPF ring buffer, which kernels before 5.8 can't create (the loader
++        // skips the map); opening it there aborts system_server.
++        if (mDeps.isAtLeastB() && new java.io.File(
++                "/sys/fs/bpf/netd_shared/map_netd_local_net_note_op_ringbuf").exists()) {
+             mLocalNetEventListener = mDeps.getLocalNetEventListener(
+                     mContext,
+                     mHandler.getLooper(),
+@@ -5082,7 +5085,9 @@ public void systemReadyInternal() {
+             mSatisfiedByLocalNetworkMetrics.start();
+         }
+ 
+-        if (mBpfNetMaps.isLoopbackAccessMetricsEnabled()) {
++        // Like LocalNetEventListener, this reads a BPF ring buffer (kernel 5.8+).
++        if (mBpfNetMaps.isLoopbackAccessMetricsEnabled() && new java.io.File(
++                "/sys/fs/bpf/netd_shared/map_netd_loopback_access_ringbuf").exists()) {
+             BpfEventPoller.nativeInitLoopbackEventConsumer();
+         }
+ 

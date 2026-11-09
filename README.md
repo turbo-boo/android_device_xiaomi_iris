@@ -38,6 +38,26 @@ headers needed by the `hardware/qcom-caf` HALs; it is not compiled.
 The stock kernel is built without `CONFIG_USERFAULTFD`, so the userfaultfd GC
 is disabled.
 
+## Source patches
+
+Android 17 expects a 5.10+ kernel, so a few projects are patched to run on the
+stock 5.4 kernel. The patches are `git format-patch` files under
+`patches/<project>/`, where `<project>` is the project path with `/` replaced
+by `_`:
+
+| Project | Patch | Author |
+| :------ | :---- | :----- |
+| `bionic` | Revert of [bf8fc35](https://github.com/LineageOS/android_bionic/commit/bf8fc35b7e165d2f12d5a854640bc6808ab81225) (`posix_spawn()` without `close_range()`, for clatd and dnsmasq) | turbo-boo |
+| `packages/modules/Connectivity` | [5c298de](https://github.com/xbill9/android_packages_modules_Connectivity/commit/5c298deab55ce7cfefec3b1cc9c79e9898f669e7) (NetBpfLoad, netd BPF programs and ConnectivityService below 5.10) | xbill9 |
+| `system/bpf` | Skip the ring buffer test program below 5.10 | turbo-boo |
+| `system/zygote` | [d6dadb5](https://github.com/xbill9/android_system_zygote/commit/d6dadb5e56c821e8dd44b13725d9de6e3085c733) (skip capabilities the kernel does not know) | xbill9 |
+
+`source build/envsetup.sh` runs `vendorsetup.sh`, which applies them with
+`patches/apply-patches.sh` on top of each project's manifest revision. Projects
+that already contain the patches are left alone, as are projects with other
+local changes, which are reported instead. `repo sync` drops the applied
+commits; the next `source build/envsetup.sh` applies them again.
+
 ## FeliCa
 
 Mobile FeliCa works through the eSE of the SN100 using the stock NXP NFC HAL
