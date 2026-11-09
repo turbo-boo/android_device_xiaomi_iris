@@ -1077,6 +1077,8 @@ product/etc/permissions/UimService.xml
 product/framework/uimgbalibrary.jar
 product/framework/uimservicelibrary.jar
 system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
+system_ext/etc/permissions/qcrilhook.xml
+system_ext/framework/qcrilhook.jar
 system_ext/lib/vendor.qti.hardware.radio.lpa@1.0.so
 system_ext/lib/vendor.qti.hardware.radio.qtiradio@1.0.so
 system_ext/lib/vendor.qti.hardware.radio.qtiradio@2.0.so
