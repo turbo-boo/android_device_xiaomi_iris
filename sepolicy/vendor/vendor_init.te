@@ -1,0 +1,7 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+set_prop(vendor_init, vendor_cnd_prop)
+set_prop(vendor_init, vendor_fp_prop)
