@@ -12,3 +12,5 @@ type thermal_data_file, data_file_type, file_type;
 
 # Touch (xiaomi_touch.ko exports /dev/xiaomi-touch)
 type vendor_touchfeature_device, dev_type;
+
+type vendor_proc_last_kmsg, fs_type, proc_type;

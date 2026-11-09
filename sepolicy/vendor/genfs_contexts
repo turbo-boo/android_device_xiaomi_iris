@@ -9,3 +9,5 @@
 # /sys/devices/platform/soc depending on the DT layout.
 genfscon sysfs /devices/platform/soc/soc:fpc1020 u:object_r:vendor_sysfs_fingerprint:s0
 genfscon sysfs /devices/soc/soc:fpc1020         u:object_r:vendor_sysfs_fingerprint:s0
+
+genfscon proc /last_kmsg u:object_r:vendor_proc_last_kmsg:s0
