@@ -10,6 +10,6 @@
   {
     "repository": "turbo-boo/android_device_xiaomi_iris-kernel",
     "target_path": "device/xiaomi/iris-kernel",
-    "branch": "lineage-23.2"
+    "branch": "lineage-24.0"
   }
 ]
