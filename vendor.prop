@@ -21,6 +21,9 @@ debug.sf.high_fps_early_phase_offset_ns=-4000000
 debug.sf.high_fps_late_app_phase_offset_ns=1000000
 debug.sf.high_fps_late_sf_phase_offset_ns=-4000000
 debug.sf.latch_unsignaled=1
+# There is no OMX service, so persistent input surfaces (CameraX video
+# recording) have to come from Codec2's in-process GraphicBufferSource.
+debug.stagefright.c2inputsurface=-1
 debug.stagefright.omx_default_rank=0
 drm.service.enabled=true
 keyguard.no_require_sim=true
