@@ -115,6 +115,11 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
+    # Stock points the FeliCa web plugin at Chrome, which this build does not
+    # ship. The plugin passes the package to Intent.setPackage() with no
+    # fallback, so point it at the bundled browser.
+    'vendor/etc/felica/common.cfg': blob_fixup()
+        .regex_replace('(?m)^00000003,.*$', '00000003,org.lineageos.jelly'),
     'vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc': blob_fixup()
         .regex_replace('    start vendor.move_data_sh\n', '')
         .regex_replace('service vendor.move_data_sh /system/bin/move_widevine_data.sh\n    class late_start\n    user media\n    group media mediadrm system\n    disabled\n    oneshot\n', '')
