@@ -11,8 +11,7 @@
 /sys/devices/(soc|platform/soc)/soc:fpc1020(/.*)?                         u:object_r:vendor_sysfs_fingerprint:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint-service\.xiaomi u:object_r:hal_fingerprint_default_exec:s0
 
-# NFC / secure element
-/dev/assd                                                                 u:object_r:secure_element_device:s0
+# NFC
 /(vendor|system/vendor)/bin/hw/vendor\.nxp\.hardware\.nfc@2\.0-service     u:object_r:hal_nfc_default_exec:s0
 
 # Sensors
