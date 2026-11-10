@@ -11,3 +11,9 @@ r_dir_file(hal_camera_default, mnt_vendor_file)
 # camx reads panel/display information and uses kgsl directly for some buffers
 r_dir_file(hal_camera_default, vendor_sysfs_graphics)
 allow hal_camera_default gpu_device:chr_file rw_file_perms;
+
+# camera.qcom.so and com.qti.node.mialgocontrol.so look up sys.boot.hwc, which
+# MIUI's PcbaConfigSet sets. That tool is not part of this build, so the
+# property is never set, and vendor domains may not read system_prop anyway.
+dontaudit hal_camera_default system_prop:file read;
+
