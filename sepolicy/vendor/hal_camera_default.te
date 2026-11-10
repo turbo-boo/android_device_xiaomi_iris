@@ -17,3 +17,8 @@ allow hal_camera_default gpu_device:chr_file rw_file_perms;
 # property is never set, and vendor domains may not read system_prop anyway.
 dontaudit hal_camera_default system_prop:file read;
 
+# The source-built camera.device impl looks up ro.camera.{req,res}.fmq.size and
+# the MIUI bokeh libraries look up persist.camera.{arcsoft.rtb,bokeh}.* debug
+# knobs. None of them is set, so they fall to default_prop, which vendor
+# domains may not read; the lookups fall back to their defaults.
+dontaudit hal_camera_default default_prop:file read;
