@@ -1,0 +1,42 @@
+From 3d335ae3b4286b7045ce69bf38bb6485dcebb7e9 Mon Sep 17 00:00:00 2001
+From: turbo-boo <59400127+turbo-boo@users.noreply.github.com>
+Date: Tue, 10 Nov 2026 01:26:55 +0900
+Subject: [PATCH] wifi_hal: Accept link layer stats without the duty cycle
+ attribute
+
+The WLAN driver of the stock 5.4 kernel on the Redmi Note 10 JE does not
+send QCA_WLAN_VENDOR_ATTR_LL_STATS_IFACE_INFO_TS_DUTY_CYCLE, so every
+link layer stats request failed with WIFI_ERROR_INVALID_ARGS and the
+framework got no interface statistics. Treat a missing attribute as
+100, the value for an interface that is not time sliced.
+
+Change-Id: Ia4160e358013267493c6bbd7e3a085b7629da1f4
+---
+ qcwcn/wifi_hal/llstats.cpp | 11 +++++------
+ 1 file changed, 5 insertions(+), 6 deletions(-)
+
+diff --git a/qcwcn/wifi_hal/llstats.cpp b/qcwcn/wifi_hal/llstats.cpp
+index 54cd03e..60f1156 100644
+--- a/qcwcn/wifi_hal/llstats.cpp
++++ b/qcwcn/wifi_hal/llstats.cpp
+@@ -194,12 +194,11 @@ static wifi_error get_wifi_interface_info(wifi_interface_link_layer_info *stats,
+     memcpy(&stats->country_str[0], nla_data(tb_vendor[QCA_WLAN_VENDOR_ATTR_LL_STATS_IFACE_INFO_COUNTRY_STR]),
+            len);
+ 
+-    if (!tb_vendor[QCA_WLAN_VENDOR_ATTR_LL_STATS_IFACE_INFO_TS_DUTY_CYCLE])
+-    {
+-        ALOGE("%s: QCA_WLAN_VENDOR_ATTR_LL_STATS_IFACE_INFO_TS_DUTY_CYCLE not found", __FUNCTION__);
+-        return WIFI_ERROR_INVALID_ARGS;
+-    }
+-    stats->time_slicing_duty_cycle_percent = nla_get_u8(tb_vendor[QCA_WLAN_VENDOR_ATTR_LL_STATS_IFACE_INFO_TS_DUTY_CYCLE]);
++    // Older drivers do not report it; 100 means the interface is not time sliced
++    stats->time_slicing_duty_cycle_percent =
++            tb_vendor[QCA_WLAN_VENDOR_ATTR_LL_STATS_IFACE_INFO_TS_DUTY_CYCLE]
++                    ? nla_get_u8(tb_vendor[QCA_WLAN_VENDOR_ATTR_LL_STATS_IFACE_INFO_TS_DUTY_CYCLE])
++                    : 100;
+ #if QC_HAL_DEBUG
+     ALOGV("Mode : %d\n"
+           "Mac addr : "
+-- 
+2.43.0
+
