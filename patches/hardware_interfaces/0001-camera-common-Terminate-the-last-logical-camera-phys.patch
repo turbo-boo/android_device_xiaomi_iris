@@ -1,0 +1,60 @@
+From f61aa4c41a3830e8213e53f9148f124dfe61fd4b Mon Sep 17 00:00:00 2001
+From: turbo-boo <59400127+turbo-boo@users.noreply.github.com>
+Date: Tue, 10 Nov 2026 08:27:19 +0900
+Subject: [PATCH] camera: common: Terminate the last logical camera physical ID
+
+Every ID in ANDROID_LOGICAL_MULTI_CAMERA_PHYSICAL_IDS has to be NUL
+terminated. The CamX HAL of the Redmi Note 10 JE (camera.qcom.so)
+reports the physical cameras of its logical rear camera as
+"252706819\0252706818", without the NUL after the last ID.
+
+CameraMetadataNative splits the list on NUL and reports both IDs to
+apps, while libcameraservice (queryPhysicalCameraIds) and
+CameraModule::isLogicalMultiCamera only count terminated IDs. So
+cameraserver never loads the characteristics of 252706818, and an app
+that asks for them, like CameraX based Aperture on startup, gets
+"unknown device" and crashes.
+
+Append the missing terminator when caching the static metadata, so the
+HAL wrapper, cameraserver and apps all see the same physical cameras.
+
+Change-Id: I497a845d227360273b34297fc5bf7137a61e13f7
+---
+ camera/common/default/CameraModule.cpp | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+diff --git a/camera/common/default/CameraModule.cpp b/camera/common/default/CameraModule.cpp
+index 9e5c21f..bb7d676 100644
+--- a/camera/common/default/CameraModule.cpp
++++ b/camera/common/default/CameraModule.cpp
+@@ -18,6 +18,8 @@
+ #define ATRACE_TAG ATRACE_TAG_CAMERA
+ // #define LOG_NDEBUG 0
+ 
++#include <vector>
++
+ #include <utils/Trace.h>
+ #include <aidl/android/hardware/graphics/common/PixelFormat.h>
+ 
+@@ -300,6 +302,18 @@ int CameraModule::getCameraInfo(int cameraId, struct camera_info* info) {
+         CameraMetadata m;
+         m.append(rawInfo.static_camera_characteristics);
+         deriveCameraCharacteristicsKeys(rawInfo.device_version, m);
++        // Every ID in ANDROID_LOGICAL_MULTI_CAMERA_PHYSICAL_IDS has to be
++        // NUL terminated, but some Qualcomm CamX HALs leave the terminator off
++        // the last one. The Java API still reports that ID, while
++        // libcameraservice and isLogicalMultiCamera() only count terminated
++        // IDs, so cameraserver never loads its characteristics and clients
++        // asking for them fail. Terminate the list so both sides agree.
++        camera_metadata_entry physicalIds = m.find(ANDROID_LOGICAL_MULTI_CAMERA_PHYSICAL_IDS);
++        if (physicalIds.count > 0 && physicalIds.data.u8[physicalIds.count - 1] != '\0') {
++            std::vector<uint8_t> ids(physicalIds.data.u8, physicalIds.data.u8 + physicalIds.count);
++            ids.push_back('\0');
++            m.update(ANDROID_LOGICAL_MULTI_CAMERA_PHYSICAL_IDS, ids.data(), ids.size());
++        }
+         cameraInfo = rawInfo;
+         cameraInfo.static_camera_characteristics = m.release();
+         index = mCameraInfoMap.add(cameraId, cameraInfo);
+-- 
+2.43.0
+
