@@ -13,4 +13,7 @@ type thermal_data_file, data_file_type, file_type;
 # Novatek touch wakeup gesture switch
 type vendor_proc_touch_gesture, fs_type, proc_type;
 
+# Palm sensor of xiaomi_touch, read by sensors.touch.detect.so
+type vendor_sysfs_tp_virtual_prox, fs_type, sysfs_type;
+
 type vendor_proc_last_kmsg, fs_type, proc_type;

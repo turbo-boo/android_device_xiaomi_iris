@@ -1,0 +1,8 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Large area (palm) detection sensor (sensors.touch.detect.so); same access
+# as the stock vendor policy grants.
+allow hal_sensors_default vendor_sysfs_tp_virtual_prox:file { open read write };
