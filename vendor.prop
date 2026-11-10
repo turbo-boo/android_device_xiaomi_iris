@@ -146,7 +146,9 @@ vendor.audio.flac.sw.decoder.24bit=true
 vendor.audio.hal.boot.timeout.ms=20000
 vendor.audio.hal.output.suspend.supported=true
 vendor.audio.hw.aac.encoder=true
-vendor.audio.offload.buffer.size.kb=32
+# The compress driver holds back a partial last fragment until drain. With 32 KB (2 s of
+# 128 kbps MP3) Media3 players stall for ~1 s at every 1 MiB load chunk; 8 KB stays below 1 s.
+vendor.audio.offload.buffer.size.kb=8
 vendor.audio.offload.gapless.enabled=true
 vendor.audio.offload.multiaac.enable=true
 vendor.audio.offload.multiple.enabled=false
