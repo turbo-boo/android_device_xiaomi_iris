@@ -3,9 +3,15 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Camera (sensor fuse IDs published by camx)
+vendor.camera.sensor.         u:object_r:vendor_camera_prop:s0
+
 # Fingerprint
 persist.vendor.sys.fp.        u:object_r:vendor_fp_prop:s0
 persist.vendor.fingerprint.   u:object_r:vendor_fp_prop:s0
 
 # Thermal
 vendor.sys.thermal.           u:object_r:vendor_thermal_normal_prop:s0
+
+# NFC
+persist.vendor.nfc.factory.fwstatus u:object_r:vendor_nfc_nq_prop:s0
