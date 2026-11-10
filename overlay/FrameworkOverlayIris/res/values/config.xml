@@ -152,6 +152,10 @@
     <bool name="config_telephony5gNonStandalone">true</bool>
     <bool name="config_telephony5gStandalone">true</bool>
 
+    <!-- The modem detects SIM insertion and removal at runtime, so take the new card
+         without asking for a reboot (stock FrameworksResCommon_Sys overlay). -->
+    <bool name="config_hotswapCapable">true</bool>
+
     <!-- IWLAN (VoWiFi) service packages, from the stock vendor overlay. -->
     <string name="config_wlan_data_service_package" translatable="false">vendor.qti.iwlan</string>
     <string name="config_wlan_network_service_package" translatable="false">vendor.qti.iwlan</string>
