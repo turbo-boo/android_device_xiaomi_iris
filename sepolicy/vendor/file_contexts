@@ -22,3 +22,8 @@
 /data/vendor/thermal(/.*)?                                                u:object_r:thermal_data_file:s0
 /(vendor|system/vendor)/bin/mi_thermald                                   u:object_r:mi_thermald_exec:s0
 
+# Wakeup sources (fpc_ttw_wl, sn-nci, NVTCapacitiveTouchScreen) read by
+# system_suspend through /sys/class/wakeup
+/sys/devices/platform/soc/soc:fpc1020/wakeup/wakeup[0-9]+(/.*)?               u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/4c88000\.i2c/i2c-0/0-0028/wakeup/wakeup[0-9]+(/.*)? u:object_r:sysfs_wakeup:s0
+/sys/devices/virtual/input/input[0-9]+/wakeup[0-9]+(/.*)?                     u:object_r:sysfs_wakeup:s0
