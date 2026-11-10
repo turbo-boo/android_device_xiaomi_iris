@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<!-- datastatusnotification requires services.core: it calls
+     TelephonyRegistry.getApnTypesStringFromBitmask(). Stock declares the library
+     the same way in system_ext/etc/permissions/com.qualcomm.location.xml. -->
+<permissions>
+    <library name="services.core" file="/system/framework/services.jar" />
+</permissions>
