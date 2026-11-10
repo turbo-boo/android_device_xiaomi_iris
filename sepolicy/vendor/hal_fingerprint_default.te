@@ -47,3 +47,7 @@ set_prop(hal_fingerprint_default, vendor_fp_prop)
 # them, so the registration stops at that check and add is never reached.
 allow hal_fingerprint_default vendor_hal_fpc_extension_hwservice:hwservice_manager find;
 
+# The blob also publishes sys.fp.vendor and persist.sys.fp.info for the MIUI
+# framework. Nothing reads them here, and allowing it would let the HAL set any
+# system_prop property, so they stay denied without filling the audit log.
+dontaudit hal_fingerprint_default system_prop:property_service set;
