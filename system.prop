@@ -16,6 +16,11 @@ mmp.enable.3g2=true
 vendor.audio.usb.disable.sidetone=1
 
 # Camera
+# Only these (stock factory and QTI) apps see the auxiliary cameras 2-6, as on
+# stock. Cameras 5 and 6 are MIUI internal (Xiaomi roles 100 and 101) and
+# report an invalid zoomRatioRange of [FLT_MAX, 0], which makes Camera2 clients
+# such as CameraX based Aperture crash while enumerating cameras.
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.xiaomi.runin,com.xiaomi.cameratest,com.xiaomi.factory.mmi
 vendor.mm.enable.qcom_parser=16777215
 
 # Connectivity
