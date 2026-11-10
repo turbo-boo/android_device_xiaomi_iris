@@ -1,0 +1,7 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# com.fingerprints.extension interfaces of the FPC HAL blob
+type vendor_hal_fpc_extension_hwservice, hwservice_manager_type, protected_hwservice;

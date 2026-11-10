@@ -40,3 +40,10 @@ allow hal_fingerprint_default self:capability sys_nice;
 # persist.vendor.sys.fp.* / persist.vendor.fingerprint.*
 get_prop(hal_fingerprint_default, vendor_fp_prop)
 set_prop(hal_fingerprint_default, vendor_fp_prop)
+
+# Before it registers its com.fingerprints.extension interfaces (MIUI test and
+# navigation tools), libhidl asks hwservicemanager for their transport, which
+# needs find. They are not in the VINTF manifest, as nothing on LineageOS uses
+# them, so the registration stops at that check and add is never reached.
+allow hal_fingerprint_default vendor_hal_fpc_extension_hwservice:hwservice_manager find;
+
