@@ -48,3 +48,9 @@ external_storage.cross_user.enabled=1
 
 # Telephony
 persist.vendor.radio.enable_temp_dds=true
+
+# QC framework value-adds
+# Also selects the device's logical camera table in the CHI override; without
+# it camx builds a GSI table whose camera 0 is a main + macro bokeh pair that
+# never delivers frames.
+ro.vendor.qti.va_aosp.support=1
