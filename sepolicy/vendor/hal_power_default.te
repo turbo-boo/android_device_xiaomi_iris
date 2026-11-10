@@ -3,6 +3,5 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Double tap to wake: power/PowerModeExtension.cpp toggles the touch wakeup
-# gesture through the xiaomi_touch mode ioctl on /dev/xiaomi-touch.
-allow hal_power_default vendor_touchfeature_device:chr_file rw_file_perms;
+# Double tap to wake (power/PowerModeExtension.cpp)
+allow hal_power_default vendor_proc_touch_gesture:file rw_file_perms;

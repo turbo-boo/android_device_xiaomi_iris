@@ -325,9 +325,6 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/devices/platform/soc/soc:fpc1020   hw_reset        0660   system  system
 /sys/devices/platform/soc/soc:fpc1020   wakeup_enable   0660   system  system
 
-# Xiaomi touch
-/dev/xiaomi-touch         0660   system     system
-
 # Add device block for FRP
 /dev/block/platform/soc/7824900.sdhci/by-name/config    0600   system     system
 /dev/block/platform/soc/7464900.sdhci/by-name/frp       0600   system     system
