@@ -1,0 +1,9 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# se_nq_extn_client.so reads the JCOP and loader service state that the NXP NFC
+# HAL keeps in /data/vendor/nfc (jcop_info.txt, LS_Status.txt).
+allow hal_secure_element_default vendor_nfc_vendor_data_file:dir search;
+allow hal_secure_element_default vendor_nfc_vendor_data_file:file r_file_perms;
