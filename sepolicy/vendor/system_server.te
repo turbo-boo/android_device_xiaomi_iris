@@ -1,0 +1,8 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# BootReceiver adds /proc/last_kmsg (labelled in file.te) to the dropbox on
+# every boot.
+allow system_server vendor_proc_last_kmsg:file r_file_perms;
