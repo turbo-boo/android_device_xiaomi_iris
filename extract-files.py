@@ -133,13 +133,14 @@ blob_fixups: blob_fixups_user_type = {
     # The stock values are route locations for the NQ NFC stack (0x01 = eSE).
     # The AOSP stack reads NFCEE IDs instead, and without DEFAULT_NFCF_ROUTE it
     # routes NFC-F to the host, so the FeliCa applet in the eSE never sees a reader.
+    # DEFAULT_ISODEP_ROUTE keeps its stock value: the HAL drops values above 4,
+    # and the qrd conf this device loads routes ISO-DEP to the host for HCE.
     (
         'vendor/etc/libnfc-mtp-SN100.conf',
         'vendor/etc/libnfc-mtp-SN100_38_4MHZ.conf',
         'vendor/etc/libnfc-qrd-SN100.conf',
         'vendor/etc/libnfc-qrd-SN100_38_4MHZ.conf',
     ): blob_fixup()
-        .regex_replace('(?m)^DEFAULT_ISODEP_ROUTE=.*$', 'DEFAULT_ISODEP_ROUTE=0xC0')
         .regex_replace('(?m)^DEFAULT_SYS_CODE_ROUTE=.*$', 'DEFAULT_SYS_CODE_ROUTE=0xC0')
         .regex_replace('(?m)^DEFAULT_SYS_CODE_PWR_STATE=.*$', 'DEFAULT_SYS_CODE_PWR_STATE=0x3B')
         .regex_replace('(?m)^DEFAULT_OFFHOST_ROUTE=.*$', 'DEFAULT_OFFHOST_ROUTE=0xC0\n\n# NFC-F (FeliCa) route\nDEFAULT_NFCF_ROUTE=0xC0')
