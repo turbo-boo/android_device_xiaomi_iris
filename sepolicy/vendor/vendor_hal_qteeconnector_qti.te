@@ -1,0 +1,10 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# qteeconnector keeps looking up the GetClientAppInfo service of the QMS
+# trustzone access app. That app is not part of this build, and the stock
+# policy denied the same lookup, so keep it denied, which fails it at once,
+# without filling the audit log.
+dontaudit vendor_hal_qteeconnector_qti vendor_qms_trustzoneaccess_service:service_manager find;

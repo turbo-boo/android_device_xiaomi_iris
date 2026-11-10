@@ -1,0 +1,7 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Binder service of the QMS trustzone access app, which this build does not ship
+type vendor_qms_trustzoneaccess_service, vndservice_manager_type;

@@ -1,0 +1,6 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+com.qualcomm.qti.qms.service.trustzoneaccess.GetClientAppInfo    u:object_r:vendor_qms_trustzoneaccess_service:s0
