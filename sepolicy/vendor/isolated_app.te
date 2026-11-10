@@ -1,0 +1,9 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# WebView's sandboxed renderer looks up content_capture. Isolated apps may only
+# find four services (neverallow in system/sepolicy/private/isolated_app_all.te),
+# so the lookup cannot be granted; the renderer works without it.
+dontaudit isolated_app content_capture_service:service_manager find;
