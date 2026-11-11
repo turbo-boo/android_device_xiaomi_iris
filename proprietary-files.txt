@@ -1813,7 +1813,6 @@ vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
 vendor/lib/libadm.so
 vendor/lib/libadpcmdec.so
-vendor/lib/libadreno_app_profiles.so
 vendor/lib/libaidenoiser.so
 vendor/lib/libalCFR.so
 vendor/lib/libaoa.so
@@ -1983,7 +1982,6 @@ vendor/lib/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib/vendor.qti.hardware.vpp@1.3.so
 vendor/lib/vendor.qti.hardware.vpp@2.0.so
-vendor/lib/vendor.qti.qspmhal@1.0.so
 vendor/lib/vendor.xiaomi.hardware.misys@1.0.so
 vendor/lib64/btaudio_offload_if.so
 vendor/lib64/carwatchdog_aidl_interface-V2-ndk_platform.so
@@ -2017,7 +2015,6 @@ vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
 vendor/lib64/libacdbrtac.so
 vendor/lib64/libadiertac.so
-vendor/lib64/libadreno_app_profiles.so
 vendor/lib64/libaidenoiser.so
 vendor/lib64/libalCFR.so
 vendor/lib64/libaoa.so
@@ -2190,5 +2187,4 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib64/vendor.qti.hardware.vpp@1.3.so
 vendor/lib64/vendor.qti.hardware.vpp@2.0.so
-vendor/lib64/vendor.qti.qspmhal@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.misys@1.0.so
