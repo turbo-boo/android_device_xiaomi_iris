@@ -28,6 +28,14 @@ debug.stagefright.c2inputsurface=-1
 debug.stagefright.omx_default_rank=0
 drm.service.enabled=true
 keyguard.no_require_sim=true
+# zram as on stock MIUI: 2252 MiB, lzo-rle, 1 GiB writeback (zstd stalled 5x longer in PSI).
+# The 5.4 kernel only takes "idle" and "huge" in /sys/block/zram0/writeback.
+mmd.zram.comp_algorithm=lzo-rle
+mmd.zram.enabled=true
+mmd.zram.size=2361393152
+mmd.zram.writeback.device_size=1073741824
+mmd.zram.writeback.enabled=true
+mmd.zram.writeback.huge_idle.enabled=false
 persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
 persist.bluetooth.a2dp_offload.disabled=false
 persist.radio.multisim.config=ssss
