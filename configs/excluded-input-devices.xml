@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<devices>
+    <!-- Haptics input devices, as on stock -->
+    <device name="qti-haptics"/>
+    <device name="qcom-hv-haptics"/>
+    <!-- Navigation gestures of the FPC fingerprint HAL blob. Without a key layout
+         they map to DPAD keys through Generic.kl, so every tap on the sensor
+         takes the UI out of touch mode and moves the focus. Nothing here uses
+         fingerprint navigation. -->
+    <device name="uinput-fpc"/>
+</devices>
