@@ -1,0 +1,36 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: turbo-boo <59400127+turbo-boo@users.noreply.github.com>
+Date: Wed, 11 Nov 2026 09:38:10 +0900
+Subject: [PATCH] mmd: Apply the per-device writeback properties to zram0
+
+Params::default() already holds one PerDeviceParams with the built-in
+defaults, and load_zram_writeback_params() appended the values read from
+mmd.zram.writeback.{huge_idle,idle,huge}.enabled after it.
+mark_and_flush_pages() looks the entries up by device index, so zram0
+always used the built-in defaults and the properties never took effect.
+
+On the Redmi Note 10 JE (iris), whose stock 5.4 kernel only accepts
+"idle" and "huge" in /sys/block/zram0/writeback, every maintenance run
+therefore failed with EINVAL on "huge_idle" before writing anything back,
+even with mmd.zram.writeback.huge_idle.enabled=false.
+
+Drop the default entry before loading the per-device values.
+---
+  src/service.rs | 1 +
+  1 file changed, 1 insertion(+)
+
+diff --git a/src/service.rs b/src/service.rs
+index 66271ed..cc17f50 100644
+--- a/src/service.rs
++++ b/src/service.rs
+@@ -615,6 +615,7 @@ fn load_zram_writeback_params(num_devices: u64) -> Option<mmd::zram::writeback::
+     params.min_bytes = U64Prop::ZramWritebackMinBytes.get(params.min_bytes);
+     params.max_bytes = U64Prop::ZramWritebackMaxBytes.get(params.max_bytes);
+     params.max_bytes_per_day = U64Prop::ZramWritebackMaxBytesPerDay.get(params.max_bytes_per_day);
++    params.per_device_params.clear();
+     for idx in 0..num_devices {
+         let mut pdp = mmd::zram::writeback::PerDeviceParams::default();
+         pdp.huge_idle = PerDeviceBoolProp::ZramWritebackHugeIdleEnabled.get(idx, pdp.huge_idle);
+-- 
+2.43.0
+
