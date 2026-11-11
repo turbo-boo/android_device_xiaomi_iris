@@ -13,3 +13,6 @@ genfscon sysfs /devices/soc/soc:fpc1020         u:object_r:vendor_sysfs_fingerpr
 genfscon proc /last_kmsg u:object_r:vendor_proc_last_kmsg:s0
 genfscon proc /nvt_gesture_mode u:object_r:vendor_proc_touch_gesture:s0
 genfscon sysfs /devices/virtual/touch/touch_dev/palm_sensor u:object_r:vendor_sysfs_tp_virtual_prox:s0
+
+# mmd_setup sizes the zram writeback loop queue from the userdata disk's nr_tags
+genfscon sysfs /devices/platform/soc/4804000.ufshc/host0/target0:0:0/0:0:0:0/block/sda/mq u:object_r:sysfs_devices_block:s0
