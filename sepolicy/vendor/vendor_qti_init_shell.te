@@ -1,0 +1,9 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# The kernel checks CAP_KILL after every signal sent with kill(), even to a
+# child of the same uid, to hand SIGKILLs from lmkd to the OOM reaper
+# (group_send_sig_info). The stock vendor policy grants the same.
+allow vendor_qti_init_shell self:capability kill;
